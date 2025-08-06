@@ -4,6 +4,61 @@
 {{__('Admin Portal')}}
 @endsection
 
+@section('css')
+<style>
+.info-box {
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.info-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.info-box-icon {
+    border-radius: 8px 0 0 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+}
+
+.info-box-content {
+    padding: 15px;
+}
+
+.info-box-text {
+    font-size: 1rem;
+    font-weight: 600;
+    color: white;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.info-box-number {
+    font-size: 0.9rem;
+    color: rgba(255,255,255,0.8);
+    display: block;
+}
+
+.card-tools {
+    float: right;
+}
+
+.card-tools .btn {
+    margin-left: 5px;
+}
+
+.table th {
+    background-color: #f8f9fa;
+    border-top: 2px solid #dee2e6;
+}
+</style>
+@endsection
+
 @section('breadcrumb')
 <div class="content-header">
   <div class="container-fluid">
