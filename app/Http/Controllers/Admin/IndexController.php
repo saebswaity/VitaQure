@@ -14,6 +14,7 @@ use App\Models\GroupCulture;
 use App\Models\Visit;
 use App\Models\Expense;
 use App\Models\Contract;
+use App\Models\Doctor;
 use Spatie\Activitylog\Models\Activity;
 
 class IndexController extends Controller

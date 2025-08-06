@@ -6,42 +6,108 @@
 
 @section('css')
 <style>
+/* Enhanced Info Boxes */
 .info-box {
     transition: all 0.3s ease;
     cursor: pointer;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    border: none;
+    overflow: hidden;
+    position: relative;
 }
 
 .info-box:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    transform: translateY(-8px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+.info-box::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, rgba(255,255,255,0.3), rgba(255,255,255,0.1));
 }
 
 .info-box-icon {
-    border-radius: 8px 0 0 8px;
+    border-radius: 12px 0 0 12px;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 2rem;
+    font-size: 2.5rem;
+    min-height: 80px;
+    background: linear-gradient(135deg, rgba(255,255,255,0.2), rgba(255,255,255,0.1));
 }
 
 .info-box-content {
-    padding: 15px;
+    padding: 20px;
+    background: linear-gradient(135deg, rgba(0,0,0,0.1), rgba(0,0,0,0.05));
 }
 
 .info-box-text {
-    font-size: 1rem;
-    font-weight: 600;
+    font-size: 1.1rem;
+    font-weight: 700;
     color: white;
     display: block;
-    margin-bottom: 5px;
+    margin-bottom: 8px;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.3);
 }
 
 .info-box-number {
     font-size: 0.9rem;
-    color: rgba(255,255,255,0.8);
+    color: rgba(255,255,255,0.9);
     display: block;
+    font-weight: 500;
+}
+
+/* Enhanced Table */
+.table {
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.table thead th {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    font-weight: 600;
+    padding: 15px 12px;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 0.5px;
+}
+
+.table tbody tr {
+    transition: all 0.2s ease;
+}
+
+.table tbody tr:hover {
+    background-color: rgba(102, 126, 234, 0.05);
+    transform: scale(1.01);
+}
+
+/* Card Enhancements */
+.card {
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    border: none;
+    overflow: hidden;
+}
+
+.card-header {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    border-bottom: 2px solid #dee2e6;
+    padding: 20px;
+}
+
+.card-title {
+    font-weight: 700;
+    color: #495057;
+    margin: 0;
 }
 
 .card-tools {
@@ -49,12 +115,43 @@
 }
 
 .card-tools .btn {
-    margin-left: 5px;
+    margin-left: 8px;
+    border-radius: 8px;
+    font-weight: 500;
+    transition: all 0.3s ease;
 }
 
-.table th {
-    background-color: #f8f9fa;
-    border-top: 2px solid #dee2e6;
+.card-tools .btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .info-box-icon {
+        font-size: 2rem;
+        min-height: 60px;
+    }
+    
+    .info-box-content {
+        padding: 15px;
+    }
+}
+
+/* Animation */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-fade-in {
+    animation: fadeInUp 0.6s ease-out;
 }
 </style>
 @endsection
@@ -81,7 +178,7 @@
 
 @section('content')
 <!-- Quick Access Boxes -->
-<div class="row">
+<div class="row mb-4 animate-fade-in">
   <div class="col-lg-12">
     <div class="card">
       <div class="card-header">
@@ -89,6 +186,11 @@
           <i class="fas fa-bolt"></i>
           {{__('Quick Access')}}
         </h3>
+        <div class="card-tools">
+          <a href="{{route('admin.index')}}" class="btn btn-primary btn-sm">
+            <i class="fas fa-chart-line"></i> {{__('Full Dashboard')}}
+          </a>
+        </div>
       </div>
       <div class="card-body">
         <div class="row">
@@ -184,7 +286,7 @@
 
 <!-- Patients List -->
 @can('view_patient')
-<div class="row">
+<div class="row animate-fade-in">
   <div class="col-lg-12">
     <div class="card card-primary card-outline">
       <div class="card-header">
@@ -205,7 +307,7 @@
       </div>
       <div class="card-body">
         <div class="table-responsive">
-          <table class="table table-striped table-hover table-bordered">
+          <table class="table table-striped table-hover">
             <thead>
               <tr>
                 <th width="10px">#</th>
@@ -214,24 +316,24 @@
                 <th>{{__('Phone')}}</th>
                 <th>{{__('Email')}}</th>
                 <th>{{__('Created')}}</th>
-                <th width="100px">{{__('Action')}}</th>
+                <th width="120px">{{__('Action')}}</th>
               </tr>
             </thead>
             <tbody>
               @forelse($patients as $patient)
               <tr>
                 <td>{{$loop->iteration}}</td>
-                <td>{{$patient->code}}</td>
-                <td>{{$patient->name}}</td>
+                <td><span class="badge badge-info">{{$patient->code}}</span></td>
+                <td><strong>{{$patient->name}}</strong></td>
                 <td>{{$patient->phone}}</td>
                 <td>{{$patient->email}}</td>
-                <td>{{$patient->created_at->format('d/m/Y')}}</td>
+                <td><small class="text-muted">{{$patient->created_at->format('d/m/Y')}}</small></td>
                 <td>
-                  <a href="{{route('admin.patients.show', $patient->id)}}" class="btn btn-info btn-sm">
+                  <a href="{{route('admin.patients.show', $patient->id)}}" class="btn btn-info btn-sm" title="{{__('View')}}">
                     <i class="fas fa-eye"></i>
                   </a>
                   @can('edit_patient')
-                  <a href="{{route('admin.patients.edit', $patient->id)}}" class="btn btn-warning btn-sm">
+                  <a href="{{route('admin.patients.edit', $patient->id)}}" class="btn btn-warning btn-sm" title="{{__('Edit')}}">
                     <i class="fas fa-edit"></i>
                   </a>
                   @endcan
@@ -239,7 +341,10 @@
               </tr>
               @empty
               <tr>
-                <td colspan="7" class="text-center">{{__('No patients found')}}</td>
+                <td colspan="7" class="text-center text-muted py-4">
+                  <i class="fas fa-user-slash fa-3x mb-3"></i>
+                  <br>{{__('No patients found')}}
+                </td>
               </tr>
               @endforelse
             </tbody>
