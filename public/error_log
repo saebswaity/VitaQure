@@ -1,0 +1,151 @@
+[07-Jun-2024 00:46:16 UTC] PHP Fatal error:  Cannot redeclare App\Http\Controllers\Admin\GroupsController::update() in /home/afantgds/zaid1.afandi.store/app/Http/Controllers/Admin/GroupsController.php on line 333
+[19-Oct-2024 17:50:50 UTC] PHP Fatal error:  During inheritance of ArrayAccess: Uncaught ErrorException: Return type of Illuminate\Support\Collection::offsetExists($key) should either be compatible with ArrayAccess::offsetExists(mixed $offset): bool, or the #[\ReturnTypeWillChange] attribute should be used to temporarily suppress the notice in /home/afantgds/zaid.afandi.store/vendor/laravel/framework/src/Illuminate/Support/Collection.php:1349
+Stack trace:
+#0 /home/afantgds/zaid.afandi.store/vendor/laravel/framework/src/Illuminate/Support/Collection.php(11): Illuminate\Foundation\Bootstrap\HandleExceptions->handleError()
+#1 /home/afantgds/zaid.afandi.store/vendor/composer/ClassLoader.php(576): include('/home/afantgds/...')
+#2 /home/afantgds/zaid.afandi.store/vendor/composer/ClassLoader.php(427): Composer\Autoload\{closure}()
+#3 /home/afantgds/zaid.afandi.store/vendor/laravel/framework/src/Illuminate/Support/helpers.php(110): Composer\Autoload\ClassLoader->loadClass()
+#4 /home/afantgds/zaid.afandi.store/vendor/laravel/framework/src/Illuminate/Foundation/PackageManifest.php(89): collect()
+#5 /home/afantgds/zaid.afandi.store/vendor/laravel/framework/src/Illuminate/Foundation/PackageManifest.php(78): Illuminate\Foundation\PackageManifest->config()
+#6 /home/afantgds/zaid.afandi.store/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/RegisterFacades.php(26): Illuminate\Foundation\PackageManifest->aliases()
+#7 /home/afantgds/zaid.afandi.store/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(230): Illuminate\Foundation\Bootstrap\RegisterFacades->bootstrap()
+#8 /home/afantgds/zaid.afandi.store/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(151): Illuminate\Foundation\Application->bootstrapWith()
+#9 /home/afantgds/zaid.afandi.store/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(135): Illuminate\Foundation\Http\Kernel->bootstrap()
+#10 /home/afantgds/zaid.afandi.store/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(109): Illuminate\Foundation\Http\Kernel->sendRequestThroughRouter()
+#11 /home/afantgds/zaid.afandi.store/public/index.php(54): Illuminate\Foundation\Http\Kernel->handle()
+#12 {main} in /home/afantgds/zaid.afandi.store/vendor/laravel/framework/src/Illuminate/Support/Collection.php on line 11
+[19-Oct-2024 17:50:50 UTC] PHP Fatal error:  During inheritance of ArrayAccess: Uncaught ErrorException: Return type of Illuminate\Support\Collection::offsetExists($key) should either be compatible with ArrayAccess::offsetExists(mixed $offset): bool, or the #[\ReturnTypeWillChange] attribute should be used to temporarily suppress the notice in /home/afantgds/zaid.afandi.store/vendor/laravel/framework/src/Illuminate/Support/Collection.php:1349
+Stack trace:
+#0 /home/afantgds/zaid.afandi.store/vendor/laravel/framework/src/Illuminate/Support/Collection.php(11): Illuminate\Foundation\Bootstrap\HandleExceptions->handleError()
+#1 /home/afantgds/zaid.afandi.store/vendor/composer/ClassLoader.php(576): include('/home/afantgds/...')
+#2 /home/afantgds/zaid.afandi.store/vendor/composer/ClassLoader.php(427): Composer\Autoload\{closure}()
+#3 /home/afantgds/zaid.afandi.store/vendor/laravel/framework/src/Illuminate/Support/helpers.php(110): Composer\Autoload\ClassLoader->loadClass()
+#4 /home/afantgds/zaid.afandi.store/vendor/laravel/framework/src/Illuminate/Foundation/PackageManifest.php(89): collect()
+#5 /home/afantgds/zaid.afandi.store/vendor/laravel/framework/src/Illuminate/Foundation/PackageManifest.php(78): Illuminate\Foundation\PackageManifest->config()
+#6 /home/afantgds/zaid.afandi.store/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/RegisterFacades.php(26): Illuminate\Foundation\PackageManifest->aliases()
+#7 /home/afantgds/zaid.afandi.store/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(230): Illuminate\Foundation\Bootstrap\RegisterFacades->bootstrap()
+#8 /home/afantgds/zaid.afandi.store/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(151): Illuminate\Foundation\Application->bootstrapWith()
+#9 /home/afantgds/zaid.afandi.store/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(135): Illuminate\Foundation\Http\Kernel->bootstrap()
+#10 /home/afantgds/zaid.afandi.store/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(109): Illuminate\Foundation\Http\Kernel->sendRequestThroughRouter()
+#11 /home/afantgds/zaid.afandi.store/public/index.php(54): Illuminate\Foundation\Http\Kernel->handle()
+#12 {main} in /home/afantgds/zaid.afandi.store/vendor/laravel/framework/src/Illuminate/Support/Collection.php on line 11
+[20-Oct-2024 19:38:07 UTC] PHP Fatal error:  During inheritance of ArrayAccess: Uncaught ErrorException: Return type of Illuminate\Support\Collection::offsetExists($key) should either be compatible with ArrayAccess::offsetExists(mixed $offset): bool, or the #[\ReturnTypeWillChange] attribute should be used to temporarily suppress the notice in /home/afantgds/zaid.afandi.store/vendor/laravel/framework/src/Illuminate/Support/Collection.php:1349
+Stack trace:
+#0 /home/afantgds/zaid.afandi.store/vendor/laravel/framework/src/Illuminate/Support/Collection.php(11): Illuminate\Foundation\Bootstrap\HandleExceptions->handleError()
+#1 /home/afantgds/zaid.afandi.store/vendor/composer/ClassLoader.php(576): include('/home/afantgds/...')
+#2 /home/afantgds/zaid.afandi.store/vendor/composer/ClassLoader.php(427): Composer\Autoload\{closure}()
+#3 /home/afantgds/zaid.afandi.store/vendor/laravel/framework/src/Illuminate/Support/helpers.php(110): Composer\Autoload\ClassLoader->loadClass()
+#4 /home/afantgds/zaid.afandi.store/vendor/laravel/framework/src/Illuminate/Foundation/PackageManifest.php(89): collect()
+#5 /home/afantgds/zaid.afandi.store/vendor/laravel/framework/src/Illuminate/Foundation/PackageManifest.php(78): Illuminate\Foundation\PackageManifest->config()
+#6 /home/afantgds/zaid.afandi.store/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/RegisterFacades.php(26): Illuminate\Foundation\PackageManifest->aliases()
+#7 /home/afantgds/zaid.afandi.store/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(230): Illuminate\Foundation\Bootstrap\RegisterFacades->bootstrap()
+#8 /home/afantgds/zaid.afandi.store/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(151): Illuminate\Foundation\Application->bootstrapWith()
+#9 /home/afantgds/zaid.afandi.store/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(135): Illuminate\Foundation\Http\Kernel->bootstrap()
+#10 /home/afantgds/zaid.afandi.store/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(109): Illuminate\Foundation\Http\Kernel->sendRequestThroughRouter()
+#11 /home/afantgds/zaid.afandi.store/public/index.php(54): Illuminate\Foundation\Http\Kernel->handle()
+#12 {main} in /home/afantgds/zaid.afandi.store/vendor/laravel/framework/src/Illuminate/Support/Collection.php on line 11
+[20-Oct-2024 19:38:07 UTC] PHP Fatal error:  During inheritance of ArrayAccess: Uncaught ErrorException: Return type of Illuminate\Support\Collection::offsetExists($key) should either be compatible with ArrayAccess::offsetExists(mixed $offset): bool, or the #[\ReturnTypeWillChange] attribute should be used to temporarily suppress the notice in /home/afantgds/zaid.afandi.store/vendor/laravel/framework/src/Illuminate/Support/Collection.php:1349
+Stack trace:
+#0 /home/afantgds/zaid.afandi.store/vendor/laravel/framework/src/Illuminate/Support/Collection.php(11): Illuminate\Foundation\Bootstrap\HandleExceptions->handleError()
+#1 /home/afantgds/zaid.afandi.store/vendor/composer/ClassLoader.php(576): include('/home/afantgds/...')
+#2 /home/afantgds/zaid.afandi.store/vendor/composer/ClassLoader.php(427): Composer\Autoload\{closure}()
+#3 /home/afantgds/zaid.afandi.store/vendor/laravel/framework/src/Illuminate/Support/helpers.php(110): Composer\Autoload\ClassLoader->loadClass()
+#4 /home/afantgds/zaid.afandi.store/vendor/laravel/framework/src/Illuminate/Foundation/PackageManifest.php(89): collect()
+#5 /home/afantgds/zaid.afandi.store/vendor/laravel/framework/src/Illuminate/Foundation/PackageManifest.php(78): Illuminate\Foundation\PackageManifest->config()
+#6 /home/afantgds/zaid.afandi.store/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/RegisterFacades.php(26): Illuminate\Foundation\PackageManifest->aliases()
+#7 /home/afantgds/zaid.afandi.store/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(230): Illuminate\Foundation\Bootstrap\RegisterFacades->bootstrap()
+#8 /home/afantgds/zaid.afandi.store/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(151): Illuminate\Foundation\Application->bootstrapWith()
+#9 /home/afantgds/zaid.afandi.store/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(135): Illuminate\Foundation\Http\Kernel->bootstrap()
+#10 /home/afantgds/zaid.afandi.store/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(109): Illuminate\Foundation\Http\Kernel->sendRequestThroughRouter()
+#11 /home/afantgds/zaid.afandi.store/public/index.php(54): Illuminate\Foundation\Http\Kernel->handle()
+#12 {main} in /home/afantgds/zaid.afandi.store/vendor/laravel/framework/src/Illuminate/Support/Collection.php on line 11
+[03-Feb-2025 18:58:08 UTC] PHP Fatal error:  During inheritance of ArrayAccess: Uncaught ErrorException: Return type of Illuminate\Support\Collection::offsetExists($key) should either be compatible with ArrayAccess::offsetExists(mixed $offset): bool, or the #[\ReturnTypeWillChange] attribute should be used to temporarily suppress the notice in /home/clinjnuv/clindalab7.clindalab.store/vendor/laravel/framework/src/Illuminate/Support/Collection.php:1349
+Stack trace:
+#0 /home/clinjnuv/clindalab7.clindalab.store/vendor/laravel/framework/src/Illuminate/Support/Collection.php(11): Illuminate\Foundation\Bootstrap\HandleExceptions->handleError()
+#1 /home/clinjnuv/clindalab7.clindalab.store/vendor/composer/ClassLoader.php(576): include('/home/clinjnuv/...')
+#2 /home/clinjnuv/clindalab7.clindalab.store/vendor/composer/ClassLoader.php(427): Composer\Autoload\{closure}()
+#3 /home/clinjnuv/clindalab7.clindalab.store/vendor/laravel/framework/src/Illuminate/Support/helpers.php(110): Composer\Autoload\ClassLoader->loadClass()
+#4 /home/clinjnuv/clindalab7.clindalab.store/vendor/laravel/framework/src/Illuminate/Foundation/PackageManifest.php(89): collect()
+#5 /home/clinjnuv/clindalab7.clindalab.store/vendor/laravel/framework/src/Illuminate/Foundation/PackageManifest.php(78): Illuminate\Foundation\PackageManifest->config()
+#6 /home/clinjnuv/clindalab7.clindalab.store/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/RegisterFacades.php(26): Illuminate\Foundation\PackageManifest->aliases()
+#7 /home/clinjnuv/clindalab7.clindalab.store/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(230): Illuminate\Foundation\Bootstrap\RegisterFacades->bootstrap()
+#8 /home/clinjnuv/clindalab7.clindalab.store/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(151): Illuminate\Foundation\Application->bootstrapWith()
+#9 /home/clinjnuv/clindalab7.clindalab.store/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(135): Illuminate\Foundation\Http\Kernel->bootstrap()
+#10 /home/clinjnuv/clindalab7.clindalab.store/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(109): Illuminate\Foundation\Http\Kernel->sendRequestThroughRouter()
+#11 /home/clinjnuv/clindalab7.clindalab.store/public/index.php(55): Illuminate\Foundation\Http\Kernel->handle()
+#12 {main} in /home/clinjnuv/clindalab7.clindalab.store/vendor/laravel/framework/src/Illuminate/Support/Collection.php on line 11
+[03-Feb-2025 18:58:09 UTC] PHP Fatal error:  During inheritance of ArrayAccess: Uncaught ErrorException: Return type of Illuminate\Support\Collection::offsetExists($key) should either be compatible with ArrayAccess::offsetExists(mixed $offset): bool, or the #[\ReturnTypeWillChange] attribute should be used to temporarily suppress the notice in /home/clinjnuv/clindalab7.clindalab.store/vendor/laravel/framework/src/Illuminate/Support/Collection.php:1349
+Stack trace:
+#0 /home/clinjnuv/clindalab7.clindalab.store/vendor/laravel/framework/src/Illuminate/Support/Collection.php(11): Illuminate\Foundation\Bootstrap\HandleExceptions->handleError()
+#1 /home/clinjnuv/clindalab7.clindalab.store/vendor/composer/ClassLoader.php(576): include('/home/clinjnuv/...')
+#2 /home/clinjnuv/clindalab7.clindalab.store/vendor/composer/ClassLoader.php(427): Composer\Autoload\{closure}()
+#3 /home/clinjnuv/clindalab7.clindalab.store/vendor/laravel/framework/src/Illuminate/Support/helpers.php(110): Composer\Autoload\ClassLoader->loadClass()
+#4 /home/clinjnuv/clindalab7.clindalab.store/vendor/laravel/framework/src/Illuminate/Foundation/PackageManifest.php(89): collect()
+#5 /home/clinjnuv/clindalab7.clindalab.store/vendor/laravel/framework/src/Illuminate/Foundation/PackageManifest.php(78): Illuminate\Foundation\PackageManifest->config()
+#6 /home/clinjnuv/clindalab7.clindalab.store/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/RegisterFacades.php(26): Illuminate\Foundation\PackageManifest->aliases()
+#7 /home/clinjnuv/clindalab7.clindalab.store/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(230): Illuminate\Foundation\Bootstrap\RegisterFacades->bootstrap()
+#8 /home/clinjnuv/clindalab7.clindalab.store/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(151): Illuminate\Foundation\Application->bootstrapWith()
+#9 /home/clinjnuv/clindalab7.clindalab.store/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(135): Illuminate\Foundation\Http\Kernel->bootstrap()
+#10 /home/clinjnuv/clindalab7.clindalab.store/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(109): Illuminate\Foundation\Http\Kernel->sendRequestThroughRouter()
+#11 /home/clinjnuv/clindalab7.clindalab.store/public/index.php(55): Illuminate\Foundation\Http\Kernel->handle()
+#12 {main} in /home/clinjnuv/clindalab7.clindalab.store/vendor/laravel/framework/src/Illuminate/Support/Collection.php on line 11
+[03-Feb-2025 18:58:10 UTC] PHP Fatal error:  During inheritance of ArrayAccess: Uncaught ErrorException: Return type of Illuminate\Support\Collection::offsetExists($key) should either be compatible with ArrayAccess::offsetExists(mixed $offset): bool, or the #[\ReturnTypeWillChange] attribute should be used to temporarily suppress the notice in /home/clinjnuv/clindalab7.clindalab.store/vendor/laravel/framework/src/Illuminate/Support/Collection.php:1349
+Stack trace:
+#0 /home/clinjnuv/clindalab7.clindalab.store/vendor/laravel/framework/src/Illuminate/Support/Collection.php(11): Illuminate\Foundation\Bootstrap\HandleExceptions->handleError()
+#1 /home/clinjnuv/clindalab7.clindalab.store/vendor/composer/ClassLoader.php(576): include('/home/clinjnuv/...')
+#2 /home/clinjnuv/clindalab7.clindalab.store/vendor/composer/ClassLoader.php(427): Composer\Autoload\{closure}()
+#3 /home/clinjnuv/clindalab7.clindalab.store/vendor/laravel/framework/src/Illuminate/Support/helpers.php(110): Composer\Autoload\ClassLoader->loadClass()
+#4 /home/clinjnuv/clindalab7.clindalab.store/vendor/laravel/framework/src/Illuminate/Foundation/PackageManifest.php(89): collect()
+#5 /home/clinjnuv/clindalab7.clindalab.store/vendor/laravel/framework/src/Illuminate/Foundation/PackageManifest.php(78): Illuminate\Foundation\PackageManifest->config()
+#6 /home/clinjnuv/clindalab7.clindalab.store/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/RegisterFacades.php(26): Illuminate\Foundation\PackageManifest->aliases()
+#7 /home/clinjnuv/clindalab7.clindalab.store/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(230): Illuminate\Foundation\Bootstrap\RegisterFacades->bootstrap()
+#8 /home/clinjnuv/clindalab7.clindalab.store/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(151): Illuminate\Foundation\Application->bootstrapWith()
+#9 /home/clinjnuv/clindalab7.clindalab.store/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(135): Illuminate\Foundation\Http\Kernel->bootstrap()
+#10 /home/clinjnuv/clindalab7.clindalab.store/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(109): Illuminate\Foundation\Http\Kernel->sendRequestThroughRouter()
+#11 /home/clinjnuv/clindalab7.clindalab.store/public/index.php(55): Illuminate\Foundation\Http\Kernel->handle()
+#12 {main} in /home/clinjnuv/clindalab7.clindalab.store/vendor/laravel/framework/src/Illuminate/Support/Collection.php on line 11
+[03-Feb-2025 18:58:11 UTC] PHP Fatal error:  During inheritance of ArrayAccess: Uncaught ErrorException: Return type of Illuminate\Support\Collection::offsetExists($key) should either be compatible with ArrayAccess::offsetExists(mixed $offset): bool, or the #[\ReturnTypeWillChange] attribute should be used to temporarily suppress the notice in /home/clinjnuv/clindalab7.clindalab.store/vendor/laravel/framework/src/Illuminate/Support/Collection.php:1349
+Stack trace:
+#0 /home/clinjnuv/clindalab7.clindalab.store/vendor/laravel/framework/src/Illuminate/Support/Collection.php(11): Illuminate\Foundation\Bootstrap\HandleExceptions->handleError()
+#1 /home/clinjnuv/clindalab7.clindalab.store/vendor/composer/ClassLoader.php(576): include('/home/clinjnuv/...')
+#2 /home/clinjnuv/clindalab7.clindalab.store/vendor/composer/ClassLoader.php(427): Composer\Autoload\{closure}()
+#3 /home/clinjnuv/clindalab7.clindalab.store/vendor/laravel/framework/src/Illuminate/Support/helpers.php(110): Composer\Autoload\ClassLoader->loadClass()
+#4 /home/clinjnuv/clindalab7.clindalab.store/vendor/laravel/framework/src/Illuminate/Foundation/PackageManifest.php(89): collect()
+#5 /home/clinjnuv/clindalab7.clindalab.store/vendor/laravel/framework/src/Illuminate/Foundation/PackageManifest.php(78): Illuminate\Foundation\PackageManifest->config()
+#6 /home/clinjnuv/clindalab7.clindalab.store/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/RegisterFacades.php(26): Illuminate\Foundation\PackageManifest->aliases()
+#7 /home/clinjnuv/clindalab7.clindalab.store/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(230): Illuminate\Foundation\Bootstrap\RegisterFacades->bootstrap()
+#8 /home/clinjnuv/clindalab7.clindalab.store/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(151): Illuminate\Foundation\Application->bootstrapWith()
+#9 /home/clinjnuv/clindalab7.clindalab.store/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(135): Illuminate\Foundation\Http\Kernel->bootstrap()
+#10 /home/clinjnuv/clindalab7.clindalab.store/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(109): Illuminate\Foundation\Http\Kernel->sendRequestThroughRouter()
+#11 /home/clinjnuv/clindalab7.clindalab.store/public/index.php(55): Illuminate\Foundation\Http\Kernel->handle()
+#12 {main} in /home/clinjnuv/clindalab7.clindalab.store/vendor/laravel/framework/src/Illuminate/Support/Collection.php on line 11
+[03-Feb-2025 19:12:00 UTC] PHP Fatal error:  During inheritance of ArrayAccess: Uncaught ErrorException: Return type of Illuminate\Support\Collection::offsetExists($key) should either be compatible with ArrayAccess::offsetExists(mixed $offset): bool, or the #[\ReturnTypeWillChange] attribute should be used to temporarily suppress the notice in /home/clinjnuv/clindalab7.clindalab.store/vendor/laravel/framework/src/Illuminate/Support/Collection.php:1349
+Stack trace:
+#0 /home/clinjnuv/clindalab7.clindalab.store/vendor/laravel/framework/src/Illuminate/Support/Collection.php(11): Illuminate\Foundation\Bootstrap\HandleExceptions->handleError()
+#1 /home/clinjnuv/clindalab7.clindalab.store/vendor/composer/ClassLoader.php(576): include('/home/clinjnuv/...')
+#2 /home/clinjnuv/clindalab7.clindalab.store/vendor/composer/ClassLoader.php(427): Composer\Autoload\{closure}()
+#3 /home/clinjnuv/clindalab7.clindalab.store/vendor/laravel/framework/src/Illuminate/Support/helpers.php(110): Composer\Autoload\ClassLoader->loadClass()
+#4 /home/clinjnuv/clindalab7.clindalab.store/vendor/laravel/framework/src/Illuminate/Foundation/PackageManifest.php(89): collect()
+#5 /home/clinjnuv/clindalab7.clindalab.store/vendor/laravel/framework/src/Illuminate/Foundation/PackageManifest.php(78): Illuminate\Foundation\PackageManifest->config()
+#6 /home/clinjnuv/clindalab7.clindalab.store/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/RegisterFacades.php(26): Illuminate\Foundation\PackageManifest->aliases()
+#7 /home/clinjnuv/clindalab7.clindalab.store/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(230): Illuminate\Foundation\Bootstrap\RegisterFacades->bootstrap()
+#8 /home/clinjnuv/clindalab7.clindalab.store/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(151): Illuminate\Foundation\Application->bootstrapWith()
+#9 /home/clinjnuv/clindalab7.clindalab.store/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(135): Illuminate\Foundation\Http\Kernel->bootstrap()
+#10 /home/clinjnuv/clindalab7.clindalab.store/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(109): Illuminate\Foundation\Http\Kernel->sendRequestThroughRouter()
+#11 /home/clinjnuv/clindalab7.clindalab.store/public/index.php(55): Illuminate\Foundation\Http\Kernel->handle()
+#12 {main} in /home/clinjnuv/clindalab7.clindalab.store/vendor/laravel/framework/src/Illuminate/Support/Collection.php on line 11
+[03-Feb-2025 19:13:18 UTC] PHP Fatal error:  During inheritance of ArrayAccess: Uncaught ErrorException: Return type of Illuminate\Support\Collection::offsetExists($key) should either be compatible with ArrayAccess::offsetExists(mixed $offset): bool, or the #[\ReturnTypeWillChange] attribute should be used to temporarily suppress the notice in /home/clinjnuv/clindalab7.clindalab.store/vendor/laravel/framework/src/Illuminate/Support/Collection.php:1349
+Stack trace:
+#0 /home/clinjnuv/clindalab7.clindalab.store/vendor/laravel/framework/src/Illuminate/Support/Collection.php(11): Illuminate\Foundation\Bootstrap\HandleExceptions->handleError()
+#1 /home/clinjnuv/clindalab7.clindalab.store/vendor/composer/ClassLoader.php(576): include('/home/clinjnuv/...')
+#2 /home/clinjnuv/clindalab7.clindalab.store/vendor/composer/ClassLoader.php(427): Composer\Autoload\{closure}()
+#3 /home/clinjnuv/clindalab7.clindalab.store/vendor/laravel/framework/src/Illuminate/Support/helpers.php(110): Composer\Autoload\ClassLoader->loadClass()
+#4 /home/clinjnuv/clindalab7.clindalab.store/vendor/laravel/framework/src/Illuminate/Foundation/PackageManifest.php(89): collect()
+#5 /home/clinjnuv/clindalab7.clindalab.store/vendor/laravel/framework/src/Illuminate/Foundation/PackageManifest.php(78): Illuminate\Foundation\PackageManifest->config()
+#6 /home/clinjnuv/clindalab7.clindalab.store/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/RegisterFacades.php(26): Illuminate\Foundation\PackageManifest->aliases()
+#7 /home/clinjnuv/clindalab7.clindalab.store/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(230): Illuminate\Foundation\Bootstrap\RegisterFacades->bootstrap()
+#8 /home/clinjnuv/clindalab7.clindalab.store/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(151): Illuminate\Foundation\Application->bootstrapWith()
+#9 /home/clinjnuv/clindalab7.clindalab.store/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(135): Illuminate\Foundation\Http\Kernel->bootstrap()
+#10 /home/clinjnuv/clindalab7.clindalab.store/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(109): Illuminate\Foundation\Http\Kernel->sendRequestThroughRouter()
+#11 /home/clinjnuv/clindalab7.clindalab.store/public/index.php(55): Illuminate\Foundation\Http\Kernel->handle()
+#12 {main} in /home/clinjnuv/clindalab7.clindalab.store/vendor/laravel/framework/src/Illuminate/Support/Collection.php on line 11
