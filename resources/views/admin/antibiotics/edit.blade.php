@@ -16,7 +16,7 @@
       </div><!-- /.col -->
       <div class="col-sm-6">
         <ol class="breadcrumb float-sm-right">
-          <li class="breadcrumb-item"><a href="{{route('admin.index')}}">{{__('Home')}}</a></li>
+          <li class="breadcrumb-item"><a href="{{route('admin.index')}}">{{__('Dashboard')}}</a></li>
           <li class="breadcrumb-item"><a href="{{route('admin.antibiotics.index')}}">{{__('Antibiotics')}}</a></li>
           <li class="breadcrumb-item active">{{__('Edit Antibiotic')}}</li>
         </ol>

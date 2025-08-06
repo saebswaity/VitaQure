@@ -20,7 +20,7 @@
             </div><!-- /.col -->
             <div class="col-sm-6">
                 <ol class="breadcrumb float-sm-right">
-                    <li class="breadcrumb-item"><a href="{{route('patient.index')}}">{{__('Home')}}</a></li>
+                    <li class="breadcrumb-item"><a href="{{route('patient.index')}}">{{__('Dashboard')}}</a></li>
                     <li class="breadcrumb-item"><a href="{{route('patient.groups.index')}}">{{__('Tests')}}</a></li>
                     <li class="breadcrumb-item active">{{__('Report')}}</li>
                 </ol>

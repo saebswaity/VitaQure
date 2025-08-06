@@ -19,6 +19,16 @@ use Spatie\Activitylog\Models\Activity;
 class IndexController extends Controller
 {
     /**
+     * admin home page - Hello World
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function home()
+    {
+        return view('admin.home');
+    }
+
+    /**
      * admin dashboard
      *
      * @return \Illuminate\Http\Response

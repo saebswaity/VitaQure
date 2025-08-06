@@ -50,7 +50,7 @@ class AdminController extends Controller
 
             Auth::shouldUse('admin');
 
-            return redirect('admin');
+            return redirect('admin/dashboard');
         }
         else{
             session()->flash('failed',__('Wrong email or password'));

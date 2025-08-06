@@ -30,8 +30,12 @@ Route::group(['prefix'=>'admin','as'=>'admin.','namespace'=>'Admin','middleware'
 
 
     });
-    //dashboard
-    Route::get('/','IndexController@index')->name('index');
+    
+    //new admin home page - Hello World
+    Route::get('/','IndexController@home')->name('home');
+    
+    //dashboard - moved from /admin to /admin/dashboard
+    Route::get('/dashboard','IndexController@index')->name('index');
 
     //dashboard
     Route::resource('tests','TestsController');
