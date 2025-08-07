@@ -8,6 +8,7 @@ use App\Models\Test;
 use App\Models\TestOption;
 use App\Http\Requests\Admin\TestRequest;
 use App\Models\CatogeryTests;
+use App\Models\Culture;
 
 use DataTables;
 
@@ -31,7 +32,8 @@ class TestsController extends Controller
      */
     public function index()
     {
-        return view('admin.tests.index');
+        $categories = CatogeryTests::all();
+        return view('admin.tests.index', compact('categories'));
     }
 
 
@@ -43,18 +45,49 @@ class TestsController extends Controller
     */
     public function ajax(Request $request)
     {
-        $model=Test::query()->where(function($q){
-            return $q->where('parent_id',0)->orWhere('separated',true);
+        $filter = $request->get('filter');
+
+        // Base query: top-level tests or separated components
+        $query = Test::query()->where(function ($q) {
+            $q->where('parent_id', 0)->orWhere('separated', true);
         });
 
-        return DataTables::eloquent($model)
-        ->editColumn('price',function($test){
-            return formated_price($test['price']);
-        })
-        ->addColumn('action',function($test){
-            return view('admin.tests._action',compact('test'));
-        })
-        ->toJson();
+        // Apply category filter if provided and not culture
+        if ($filter && $filter !== 'culture') {
+            $query->where('catogery_id', $filter);
+        }
+
+        // If culture selected, return cultures dataset
+        if ($filter === 'culture') {
+            $cultureQuery = Culture::query();
+
+            return DataTables::eloquent($cultureQuery)
+                ->addColumn('type', function () {
+                    return 'Culture';
+                })
+                ->addColumn('shortcut', function () {
+                    return '-';
+                })
+                ->editColumn('price', function ($culture) {
+                    return formated_price($culture['price']);
+                })
+                ->addColumn('action', function ($culture) {
+                    return view('admin.cultures._action', compact('culture'));
+                })
+                ->toJson();
+        }
+
+        return DataTables::eloquent($query)
+            ->addColumn('type', function () {
+                return 'Test';
+            })
+            ->editColumn('price', function ($test) {
+                return formated_price($test['price']);
+            })
+            ->addColumn('action', function ($test) {
+                return view('admin.tests._action', compact('test'));
+            })
+            ->toJson();
     }
 
 

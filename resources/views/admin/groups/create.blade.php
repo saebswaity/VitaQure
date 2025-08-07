@@ -44,5 +44,8 @@
 @endsection
 
 @section('scripts')
-<script src="{{url('js/admin/groups.js')}}"></script>
+<script>
+  window.__prefillPatientId = @json($prefillPatientId ?? null);
+</script>
+<script src="{{url('js/admin/groups.js')}}?v={{ @filemtime(public_path('js/admin/groups.js')) }}"></script>
 @endsection

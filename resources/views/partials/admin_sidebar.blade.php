@@ -72,7 +72,7 @@
     </li>
     @endcan
     @can('view_catogery')
-    <li class="nav-item">
+    <li class="nav-item d-none">
       <a href="/admin/catogery" class="nav-link" id="catogery">
         <i class="nav-icon fa fa-object-group"></i>
         <p>
@@ -83,7 +83,7 @@
     @endcan
 
     @can('view_culture')
-    <li class="nav-item">
+    <li class="nav-item d-none">
       <a href="{{route('admin.cultures.index')}}" class="nav-link" id="cultures">
         <i class="nav-icon fas fa-vial"></i>
         <p>

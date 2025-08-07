@@ -46,12 +46,16 @@ var option_count=0;
       "serverSide": true,
       "bSort" : false,
         "ajax": {
-          url: url("admin/get_tests")
+          url: url("admin/get_tests"),
+          data: function(d){
+            d.filter = $('#category_filter').val();
+          }
         },
         // orderCellsTop: true,
         fixedHeader: true,
         "columns": [
            {data:"id"},
+           {data:"type"},
            {data:"name"},
            {data:"shortcut"},
            {data:"sample_type"},
@@ -78,6 +82,11 @@ var option_count=0;
           },
         }
      });
+
+    // reload on filter change
+    $(document).on('change','#category_filter', function(){
+      table.ajax.reload();
+    });
     
     // text editor
     $('.components').find('textarea').summernote({

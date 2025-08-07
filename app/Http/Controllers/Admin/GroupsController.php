@@ -102,14 +102,18 @@ class GroupsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
         $tests = Test::where('parent_id', 0)->orWhere('separated', true)->get();
         $cultures = Culture::all();
         $branches = Branch::all();
         $contracts = Contract::all();
 
-        return view('admin.groups.create', compact('tests', 'cultures', 'branches', 'contracts'));
+        // If a patient id is provided, pass it to the view so JS can pre-fill
+        $prefillPatientId = $request->get('patient_id');
+
+        return view('admin.groups.create', compact('tests', 'cultures', 'branches', 'contracts'))
+                ->with('prefillPatientId', $prefillPatientId);
     }
 
     /**

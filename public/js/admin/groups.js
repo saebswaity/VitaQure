@@ -142,6 +142,36 @@ var visit_patient_id=$('#visit_patient_id').val();
          url:url('patient/login/'+patient_code)
       });
    }
+
+   // Prefill patient by query param on groups/create
+   if(typeof window.__prefillPatientId !== 'undefined' && window.__prefillPatientId){
+      var pid = window.__prefillPatientId;
+      // trigger name select2 load to populate fields
+      var newOption = new Option('#'+pid, pid, false, false);
+      $('#name').append(newOption).trigger('change');
+      $.ajax({
+           url: ajax_url('get_patient'+'?id='+pid),
+           beforeSend:function(){
+              $('.preloader').show();
+              $('.loader').show();
+           },
+           success:function(patient){
+              // set both code and name select2s
+              $('#name').empty().append(new Option(patient.name, patient.id, true, true)).trigger('change');
+              $('#code').empty().append(new Option(patient.code, patient.id, true, true)).trigger('change');
+              // fill readonly fields
+              $('#phone').val(patient.phone);
+              $('#email').val(patient.email);
+              $('#gender').val(patient.gender);
+              $('#dob').val(patient.dob);
+              $('#address').val(patient.address);
+           },
+           complete:function(){
+              $('.preloader').hide();
+              $('.loader').hide();
+           }
+      });
+   }
    
    $('footer').addClass('no-print');
 
