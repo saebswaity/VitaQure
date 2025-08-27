@@ -1,0 +1,287 @@
+{
+  "Home": {
+    "route": "/zaid",
+    "description": "Public welcome/landing page with a brief introduction and links to sign in or navigate to key areas."
+  },
+  "Admin Login": {
+    "route": "/",
+    "description": "Secure sign‑in page for staff. Contains email/username and password fields, remember‑me option, CSRF protection, validation errors, and links for password recovery. Redirects to the admin dashboard upon successful login."
+  },
+  "Admin Logout": {
+    "route": "POST /admin/logout",
+    "description": "Ends the current admin session and redirects back to the login screen to keep the account secure."
+  },
+  "Admin Password Reset": {
+    "route": "/admin/reset/*",
+    "description": "Complete password recovery workflow for admins. Includes a page to request a reset email, a token‑based page to set a new password, and submission/confirmation screens."
+  },
+  "Admin Home": {
+    "route": "/admin",
+    "description": "Admin landing page greeting the user and providing quick entry points to core modules (Reports, Groups, Patients, etc.)."
+  },
+  "Admin Dashboard": {
+    "route": "/admin/dashboard",
+    "description": "Operational overview with key performance indicators, quick links, recent activity summaries, and shortcuts into common workflows (create group, search patients, view reports)."
+  },
+  "Admin VitaGuard": {
+    "route": [
+      "/admin/vitaguard",
+      "POST /admin/vitaguard/predict"
+    ],
+    "description": "AI‑assisted decision support. The page contains an input form (text and/or file inputs), a predict/submit button, and a results panel that displays model insights, confidence, and guidance for staff."
+  },
+  "Admin Vita AI Chatbot": {
+    "route": "/admin/vitachatbot",
+    "description": "Full‑page embedded assistant for staff. Includes a message history panel, input box, send/clear actions, and a settings drawer to pick the AI model, set initial context, and control conversation saving."
+  },
+  "Admin Reports": {
+    "route": [
+      "/admin/reports",
+      "POST /admin/reports/pdf/{id}",
+      "POST /admin/reports/update_culture/{id}",
+      "GET /admin/get_reports",
+      "GET /admin/sign_report/{id}",
+      "POST /admin/reports/send_report_mail/{id}"
+    ],
+    "description": "End‑to‑end reporting workspace. Contains a filterable table of patient orders (groups), a details view with selected tests/cultures, result entry areas, status indicators, and actions to generate PDF reports, sign them, and email to recipients."
+  },
+  "Admin Groups": {
+    "route": [
+      "/admin/groups",
+      "POST /admin/groups/print_barcode/{group_id}",
+      "GET /admin/get_groups",
+      "GET /admin/visits/create_tests/{id}"
+    ],
+    "description": "Order management for lab work. Includes index/search, create/edit screens to select the patient, add tests and cultures, view financial breakdown (subtotal, discount, total, paid, due), generate/print barcodes, and track completion status for each item."
+  },
+  "Admin Patients": {
+    "route": [
+      "/admin/patients",
+      "GET /admin/get_patients",
+      "GET /admin/patients_export",
+      "GET /admin/patients_download_template",
+      "POST /admin/patients_import"
+    ],
+    "description": "Patient registry. The pages provide a searchable list with pagination, a form to add/edit patient demographics and contacts, bulk import from template, and export for reporting or migration."
+  },
+  "Admin Doctors": {
+    "route": [
+      "/admin/doctors",
+      "GET /admin/get_doctors",
+      "GET /admin/doctors_export",
+      "GET /admin/doctors_download_template",
+      "POST /admin/doctors_import"
+    ],
+    "description": "Directory of referring physicians. Includes CRUD pages to store contact details and commission settings, plus import/export to maintain the list efficiently."
+  },
+  "Admin Tests": {
+    "route": [
+      "/admin/tests",
+      "GET /admin/get_tests"
+    ],
+    "description": "Master catalog of lab tests. Screens to define test metadata, components, units, reference ranges, categories, and special flags (e.g., separated tests)."
+  },
+  "Admin Cultures": {
+    "route": [
+      "/admin/cultures",
+      "GET /admin/get_cultures"
+    ],
+    "description": "Catalog of culture tests. Includes forms to define culture types and link relevant result fields and antibiotics to support sensitivity testing."
+  },
+  "Admin Culture Options": {
+    "route": [
+      "/admin/culture_options",
+      "GET /admin/get_culture_options"
+    ],
+    "description": "Structured vocabulary used in culture results (e.g., organism names, specimen/source, stain results). Provides lists and forms to create/edit standardized options for consistent reporting."
+  },
+  "Admin Antibiotics": {
+    "route": [
+      "/admin/antibiotics",
+      "GET /admin/get_antibiotics"
+    ],
+    "description": "Reference list of antibiotics for sensitivity testing. Includes index and forms to add/edit drugs used when entering culture results."
+  },
+  "Admin Prices": {
+    "route": [
+      "GET/POST /admin/prices/tests",
+      "GET /admin/tests_prices_export",
+      "POST /admin/tests_prices_import",
+      "GET/POST /admin/prices/cultures",
+      "GET /admin/cultures_prices_export",
+      "POST /admin/cultures_prices_import"
+    ],
+    "description": "Pricing console. Dedicated pages to view and update test and culture prices, with spreadsheet‑style inputs, validation, and bulk import/export to streamline updates."
+  },
+  "Admin Accounting": {
+    "route": [
+      "/admin/accounting",
+      "GET /admin/generate_report",
+      "GET /admin/doctor_report",
+      "GET /admin/generate_doctor_report"
+    ],
+    "description": "Financial reporting area. Staff can filter by date, branch, and doctor to generate revenue and commission reports, then view, print, or download summaries for reconciliation."
+  },
+  "Admin Chat": {
+    "route": "/admin/chat",
+    "description": "Internal messaging module for staff collaboration. Provides a conversation list and message thread view for quick coordination within the team."
+  },
+  "Admin Visits": {
+    "route": [
+      "/admin/visits",
+      "GET /admin/get_visits"
+    ],
+    "description": "Visit tracking for patients. Pages to log visits, attach tests, review visit details, and monitor progress."
+  },
+  "Admin Branches": {
+    "route": [
+      "/admin/branches",
+      "GET /admin/get_branches"
+    ],
+    "description": "Branch directory. Maintain locations with address, contact info, and operational notes to support reporting and routing."
+  },
+  "Admin Contracts": {
+    "route": [
+      "/admin/contracts",
+      "GET /admin/get_contracts"
+    ],
+    "description": "Contract management. Define partner accounts, discount schemes, terms, and effective dates used during order pricing."
+  },
+  "Admin Expenses": {
+    "route": [
+      "/admin/expenses",
+      "GET /admin/get_expenses"
+    ],
+    "description": "Expense ledger. Create and review expense entries with amount, date, vendor/notes, and associated category to support accounting."
+  },
+  "Admin Expense Categories": {
+    "route": [
+      "/admin/expense_categories",
+      "GET /admin/get_expense_categories"
+    ],
+    "description": "Classification list for expenses. Add/edit categories that organize the expense ledger and drive categorization in reports."
+  },
+  "Admin Backups": {
+    "route": "/admin/backups",
+    "description": "Backup management. View available backups, create new backups, download archives, and restore when permitted."
+  },
+  "Admin Activity Logs": {
+    "route": [
+      "/admin/activity_logs",
+      "POST /admin/activity_logs_clear",
+      "GET /admin/get_activity_logs"
+    ],
+    "description": "Audit center. A searchable table shows who did what and when (user, action, timestamp, IP/device). Includes tools to clear older logs when necessary."
+  },
+  "Admin Settings": {
+    "route": [
+      "/admin/settings",
+      "POST /admin/settings/info",
+      "POST /admin/settings/emails",
+      "POST /admin/settings/reports",
+      "POST /admin/settings/sms",
+      "POST /admin/settings/whatsapp",
+      "POST /admin/settings/api_keys"
+    ],
+    "description": "Configurations console. Organize organization profile, email templates, report styles (fonts, sizes, header/footer imagery), SMS/WhatsApp templates and toggles, and administrative API‑key inputs."
+  },
+  "Admin Roles": {
+    "route": [
+      "/admin/roles",
+      "GET /admin/get_roles"
+    ],
+    "description": "Role‑based access control center. Create roles and toggle fine‑grained permissions (view/create/edit/delete/sign per module) to control what users can do."
+  },
+  "Admin Users": {
+    "route": [
+      "/admin/users",
+      "GET /admin/get_users"
+    ],
+    "description": "User administration. Add/edit staff accounts, assign roles, reset passwords, and manage status."
+  },
+  "Admin Translations": {
+    "route": "/admin/translations",
+    "description": "Translation workspace. Search and edit UI strings to localize the system and support RTL languages where applicable."
+  },
+  "Admin Updates": {
+    "route": "/admin/update/{version}",
+    "description": "Controlled update action. Initiates an update to a specific version under admin supervision."
+  },
+  "Patient Auth": {
+    "route": [
+      "GET /patient/login/register",
+      "POST /patient/login/register_submit",
+      "GET /patient/login/login",
+      "POST /patient/login/login_submit",
+      "GET /patient/login/mail",
+      "POST /patient/login/mail_submit",
+      "GET /patient/login/patient/login/{code}",
+      "POST /logout"
+    ],
+    "description": "Patient portal access. Pages let a patient register, sign in, request a quick‑login code by email, use code‑based login, and sign out."
+  },
+  "Patient Dashboard": {
+    "route": "/patient",
+    "description": "Patient home. Displays a personal overview with recent orders, available reports/receipts, and links to profile and library."
+  },
+  "Patient Groups": {
+    "route": [
+      "/patient/groups",
+      "GET /patient/groups/reports/{id}",
+      "GET /patient/groups/receipt/{id}",
+      "POST /patient/groups/reports/pdf/{id}",
+      "GET /patient/get_patient_groups"
+    ],
+    "description": "Patient order history. A list of the patient’s lab orders with access to view/download reports (PDF) and receipts, and regenerate PDFs when allowed."
+  },
+  "Patient Profile": {
+    "route": [
+      "GET /patient/profile",
+      "POST /patient/profile"
+    ],
+    "description": "Account settings for patients. Edit name, contact details, and password/preferences to keep records up to date."
+  },
+  "Patient Visits": {
+    "route": "/patient/visits",
+    "description": "Read‑only or limited view of the patient’s visits depending on permissions, showing visit dates and linked orders."
+  },
+  "Patient Branches": {
+    "route": "/patient/branches",
+    "description": "Branch directory for patients with location and contact details to find nearby service points."
+  },
+  "Patient Tests Library": {
+    "route": [
+      "/patient/tests_library",
+      "GET /patient/get_analyses",
+      "GET /patient/get_cultures"
+    ],
+    "description": "Educational library of available analyses and culture tests. Search/browse to understand offerings and preparation requirements (where provided)."
+  },
+  "AI Chat UI": {
+    "route": "/ai-chat/embed",
+    "description": "Embedded chat window used across the system. Presents conversation history, an input box, send/clear controls, and access to settings to tailor responses."
+  },
+  "AI Chat API": {
+    "route": [
+      "GET /ai-chat/api/models",
+      "POST /ai-chat/api/chat",
+      "POST /ai-chat/api/clear"
+    ],
+    "description": "Endpoints that power the chat UI: fetch available models, submit a message to receive an answer, and clear the session history."
+  },
+  "Chatbot Proxy (Flask)": {
+    "route": "/chatbot_langchain/*",
+    "description": "Reverse‑proxy mount that exposes an external Flask chatbot under the /chatbot_langchain path for seamless access from the web app."
+  },
+  "Utilities": {
+    "route": [
+      "GET /change_locale/{lang}",
+      "GET /clear-cache",
+      "POST /posts/store",
+      "POST /test/store",
+      "DELETE /admin/catogery/{catogeryTest}"
+    ],
+    "description": "Various helper actions. Change the interface language, clear application cache for troubleshooting, and internal endpoints used to store posts/tests or remove a category item."
+  }
+}
+

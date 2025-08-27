@@ -1,6 +1,14 @@
 <nav class="mt-2">
   <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
     <li class="nav-item">
+      <a href="{{ route('admin.home') }}" class="nav-link" id="admin_main">
+        <i class="nav-icon fas fa-home"></i>
+        <p>
+          {{__('Admin Main')}}
+        </p>
+      </a>
+    </li>
+    <li class="nav-item">
       <a href="{{route('admin.index')}}" class="nav-link" id="dashboard">
         <i class="nav-icon fas fa-th"></i>
         <p>
@@ -81,6 +89,8 @@
       </a>
     </li>
     @endcan
+
+    
 
     @can('view_culture')
     <li class="nav-item d-none">

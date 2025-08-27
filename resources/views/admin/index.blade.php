@@ -6,6 +6,24 @@
 
 @section('css')
 <link rel="stylesheet" href="{{url('plugins/swtich-netliva/css/netliva_switch.css')}}">
+<style>
+  .btn-admin-main {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: #ffffff !important;
+    border: none;
+    border-radius: 9999px;
+    padding: 6px 12px;
+    font-weight: 600;
+    letter-spacing: 0.2px;
+    box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+  }
+  .btn-admin-main:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 10px 24px rgba(0,0,0,0.2);
+  }
+  .btn-admin-main i { margin-right: 6px; }
+</style>
 @endsection
 
 @section('breadcrumb')
@@ -19,9 +37,14 @@
         </h1>
       </div><!-- /.col -->
       <div class="col-sm-6">
-        <ol class="breadcrumb float-sm-right">
-          <li class="breadcrumb-item active">{{__('Dashboard')}}</li>
-        </ol>
+        <div class="float-sm-right">
+          <a href="{{ url('/admin') }}" class="btn btn-sm btn-admin-main mr-2">
+            <i class="fas fa-home"></i> {{ __('Admin Main') }}
+          </a>
+          <ol class="breadcrumb d-inline-block mb-0">
+            <li class="breadcrumb-item active">{{__('Dashboard')}}</li>
+          </ol>
+        </div>
       </div><!-- /.col -->
     </div><!-- /.row -->
   </div><!-- /.container-fluid -->
@@ -113,6 +136,7 @@
       <a href="{{route('admin.visits.index')}}" class="small-box-footer">{{__('More info')}} <i class="fas fa-arrow-circle-right"></i></a>
     </div>
   </div>
+
 
   <!-- today statistics -->
   <div class="col-md-4 col-sm-6 col-12">

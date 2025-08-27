@@ -1,0 +1,18 @@
+{
+  "inputs": {
+    "male": {"label": "Gender", "type": "select", "options": ["Male", "Female"], "required": true},
+    "age": {"label": "Age", "type": "number", "required": true},
+    "currentSmoker": {"label": "Current Smoker", "type": "select", "options": ["Yes", "No"]},
+    "cigsPerDay": {"label": "Cigarettes Per Day", "type": "number"},
+    "BPMeds": {"label": "BP Medications", "type": "select", "options": ["Yes", "No"]},
+    "prevalentStroke": {"label": "Prevalent Stroke", "type": "select", "options": ["Yes", "No"]},
+    "prevalentHyp": {"label": "Prevalent Hypertension", "type": "select", "options": ["Yes", "No"]},
+    "diabetes": {"label": "Diabetes", "type": "select", "options": ["Yes", "No"]},
+    "totChol": {"label": "Total Cholesterol", "type": "number"},
+    "sysBP": {"label": "Systolic BP", "type": "number"},
+    "diaBP": {"label": "Diastolic BP", "type": "number"},
+    "BMI": {"label": "BMI", "type": "number"},
+    "heartRate": {"label": "Heart Rate", "type": "number"},
+    "glucose": {"label": "Glucose", "type": "number"}
+  }
+}

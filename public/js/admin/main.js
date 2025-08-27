@@ -212,6 +212,7 @@
     },60000);
 
 
+    // Preloader disabled globally; ensure hidden just in case
     $(window).on('load',function() {
       $('.preloader').hide();
       $('.loader').hide();

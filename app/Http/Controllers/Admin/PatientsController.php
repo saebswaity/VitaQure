@@ -111,6 +111,11 @@ class PatientsController extends Controller
 
         session()->flash('success','Patient created successfully');
 
+        // If a return URL is provided (e.g., from admin home), redirect back there
+        if ($request->filled('return_url')) {
+            return redirect($request->input('return_url'));
+        }
+
         return redirect()->route('admin.patients.index');
     }
 
@@ -161,6 +166,10 @@ class PatientsController extends Controller
 
         session()->flash('success','Patient data updated successfully');
 
+        if ($request->filled('return_url')) {
+            return redirect($request->input('return_url'));
+        }
+
         return redirect()->route('admin.patients.index');
     }
 
@@ -176,6 +185,12 @@ class PatientsController extends Controller
         $patient->groups()->delete();//delete groups
         $patient->delete();//delete patient
         session()->flash('success',__('Patient deleted successfully'));
+
+        // If a return URL is provided (e.g., from admin home), redirect back there
+        if (request()->filled('return_url')) {
+            return redirect(request()->input('return_url'));
+        }
+
         return redirect()->route('admin.patients.index');
     }
 

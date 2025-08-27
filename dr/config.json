@@ -1,0 +1,8 @@
+{
+  "kidney": { "path": "models/kidney.json" },
+  "heart": { "path": "models/heart.json" },
+  "liver": { "path": "models/liver.json" },
+  "blood_disorders": { "path": "models/anemia.json" },
+  "diabetes": { "path": "models/diabetes.json" }
+}
+

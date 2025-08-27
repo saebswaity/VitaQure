@@ -8,7 +8,8 @@ return [
     'keywords'              => '',
     'creator'               => 'Laravel Pdf',
     'display_mode'          => 'fullpage',
-    'tempDir'               => base_path('../temp/'),
+    // Use storage temp directory to avoid permission issues
+    'tempDir'               => storage_path('app/temp'),
     'font_path'             => base_path('storage/fonts/'),
     'font_data'             => [
        'cairo' => [

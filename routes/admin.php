@@ -37,6 +37,15 @@ Route::group(['prefix'=>'admin','as'=>'admin.','namespace'=>'Admin','middleware'
     //dashboard - moved from /admin to /admin/dashboard
     Route::get('/dashboard','IndexController@index')->name('index');
 
+    // VitaGuard AI page
+    Route::get('/vitaguard', 'VitaGuardController@index')->name('vitaguard.index');
+    Route::post('/vitaguard/predict', 'VitaGuardController@predict')->name('vitaguard.predict');
+
+    // Vita AI Chatbot page (embedded chat + settings inside admin layout)
+    Route::get('/vitachatbot', function(){
+        return view('admin.vitachatbot');
+    })->name('vitachatbot');
+
     //dashboard
     Route::resource('tests','TestsController');
 
@@ -165,6 +174,36 @@ Route::group(['prefix'=>'admin','as'=>'admin.','namespace'=>'Admin','middleware'
 
     //translations
     Route::resource('translations','TranslationsController');
+
+    // QC entry → Definition of Analytes
+    Route::get('qc', function(){ return redirect()->route('admin.qc.analytes.index'); })->name('qc');
+    Route::get('qc/analytes', 'QcAnalytesController@index')->name('qc.analytes.index');
+    Route::get('qc/analytes/list', 'QcAnalytesController@list')->name('qc.analytes.list');
+    Route::post('qc/analytes', 'QcAnalytesController@store')->name('qc.analytes.store');
+    Route::put('qc/analytes/{id}', 'QcAnalytesController@update')->name('qc.analytes.update');
+    Route::delete('qc/analytes/{id}', 'QcAnalytesController@destroy')->name('qc.analytes.destroy');
+
+    // QC Step 1: Control Materials Assignment
+    Route::get('qc/materials', 'QcControlMaterialsController@index')->name('qc.materials.index');
+    Route::get('qc/materials/list', 'QcControlMaterialsController@list')->name('qc.materials.list');
+    Route::get('qc/materials/{id}', 'QcControlMaterialsController@show')->name('qc.materials.show');
+    Route::post('qc/materials', 'QcControlMaterialsController@store')->name('qc.materials.store');
+    Route::put('qc/materials/{id}', 'QcControlMaterialsController@update')->name('qc.materials.update');
+    Route::delete('qc/materials/{id}', 'QcControlMaterialsController@destroy')->name('qc.materials.destroy');
+    Route::get('qc/materials-assigned', 'QcControlMaterialsController@assignedForAnalyte')->name('qc.materials.assigned_for_analyte');
+    Route::post('qc/materials-assign', 'QcControlMaterialsController@assignForAnalyte')->name('qc.materials.assign_for_analyte');
+
+    // QC Step 2: Reference Values
+    Route::get('qc/reference', 'QcReferenceValuesController@index')->name('qc.reference.index');
+    Route::get('qc/reference/options', 'QcReferenceValuesController@options')->name('qc.reference.options');
+    Route::post('qc/reference/load', 'QcReferenceValuesController@load')->name('qc.reference.load');
+    Route::post('qc/reference/save', 'QcReferenceValuesController@save')->name('qc.reference.save');
+
+    // QC Step 3: Daily Entries
+    Route::get('qc/entries', 'QcEntriesController@index')->name('qc.entries.index');
+    Route::get('qc/entries/options', 'QcEntriesController@options')->name('qc.entries.options');
+    Route::get('qc/entries/load', 'QcEntriesController@load')->name('qc.entries.load');
+    Route::post('qc/entries/save', 'QcEntriesController@save')->name('qc.entries.save');
 
     //updates
     Route::get('update/{version}','UpdatesController@update');

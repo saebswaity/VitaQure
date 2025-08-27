@@ -1,0 +1,18 @@
+{
+  "inputs": {
+    "WBC": {"label": "WBC", "type": "number"},
+    "LYMp": {"label": "LYMp", "type": "number"},
+    "NEUTp": {"label": "NEUTp", "type": "number"},
+    "LYMn": {"label": "LYMn", "type": "number"},
+    "NEUTn": {"label": "NEUTn", "type": "number"},
+    "RBC": {"label": "RBC", "type": "number"},
+    "HGB": {"label": "HGB", "type": "number"},
+    "HCT": {"label": "HCT", "type": "number"},
+    "MCV": {"label": "MCV", "type": "number"},
+    "MCH": {"label": "MCH", "type": "number"},
+    "MCHC": {"label": "MCHC", "type": "number"},
+    "PLT": {"label": "PLT", "type": "number"},
+    "PDW": {"label": "PDW", "type": "number"},
+    "PCT": {"label": "PCT", "type": "number"}
+  }
+}

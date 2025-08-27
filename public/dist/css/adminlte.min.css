@@ -39,34 +39,9 @@
 
   .datepicker{z-index:1151 !important;}
 
-  .preloader{
-    position:fixed;
-    left:-100;
-    top:-100;
-    width: 100%;
-    height: 100%;
-    z-index:1000000;
-    background: #000;
-    opacity:0.9;
-  }
-
-  .loader {
-    position:fixed;
-    left:45%;
-    top:50%;
-    border: 10px solid #f3f3f3; /* Light grey */
-    border-top: 10px solid #0547ff; /* Blue */
-    border-radius: 50%;
-    width: 80px;
-    height: 80px;
-    z-index:10000000;
-    animation: spin 1s linear infinite;
-  }
-  
-  @keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-  }
+  /* Disabled global page preloader/spinner */
+  .preloader{ display:none !important; }
+  .loader{ display:none !important; }
 
 
   .list_unread_messages{

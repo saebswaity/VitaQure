@@ -1,0 +1,33 @@
+{
+  "inputs": {
+    "Age": {"label": "Age", "type": "number", "required": true},
+    "Gender": {"label": "Gender", "type": "select", "options": ["Male", "Female"], "required": true},
+    "BMI": {"label": "BMI", "type": "number", "required": true},
+    "Smoking": {"label": "Smoking", "type": "select", "options": ["Yes", "No"], "required": true},
+    "AlcoholConsumption": {"label": "Alcohol Consumption (units/week)", "type": "number"},
+    "FamilyHistoryKidneyDisease": {"label": "Family History of Kidney Disease", "type": "select", "options": ["Yes", "No"]},
+    "FamilyHistoryHypertension": {"label": "Family History of Hypertension", "type": "select", "options": ["Yes", "No"]},
+    "FamilyHistoryDiabetes": {"label": "Family History of Diabetes", "type": "select", "options": ["Yes", "No"]},
+    "PreviousAcuteKidneyInjury": {"label": "Previous Acute Kidney Injury", "type": "select", "options": ["Yes", "No"]},
+    "SystolicBP": {"label": "Systolic BP", "type": "number"},
+    "DiastolicBP": {"label": "Diastolic BP", "type": "number"},
+    "FastingBloodSugar": {"label": "Fasting Blood Sugar", "type": "number"},
+    "HbA1c": {"label": "HbA1c", "type": "number"},
+    "SerumCreatinine": {"label": "Serum Creatinine", "type": "number"},
+    "BUNLevels": {"label": "BUN Levels", "type": "number"},
+    "GFR": {"label": "GFR", "type": "number"},
+    "ProteinInUrine": {"label": "Protein in Urine", "type": "number"},
+    "ACR": {"label": "ACR", "type": "number"},
+    "SerumElectrolytesSodium": {"label": "Sodium", "type": "number"},
+    "SerumElectrolytesPotassium": {"label": "Potassium", "type": "number"},
+    "SerumElectrolytesCalcium": {"label": "Calcium", "type": "number"},
+    "SerumElectrolytesPhosphorus": {"label": "Phosphorus", "type": "number"},
+    "HemoglobinLevels": {"label": "Hemoglobin", "type": "number"},
+    "Diuretics": {"label": "Diuretics", "type": "select", "options": ["Yes", "No"]},
+    "Edema": {"label": "Edema", "type": "select", "options": ["Yes", "No"]},
+    "FatigueLevels": {"label": "Fatigue Level (1-10)", "type": "number"},
+    "NauseaVomiting": {"label": "Nausea/Vomiting", "type": "select", "options": ["Yes", "No"]},
+    "MuscleCramps": {"label": "Muscle Cramps", "type": "select", "options": ["Yes", "No"]},
+    "Itching": {"label": "Itching", "type": "select", "options": ["Yes", "No"]}
+  }
+}

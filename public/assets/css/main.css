@@ -1,43 +1,39 @@
-
-
-
-
 /*//////////////////////////////////////////////////////////////////
 [ FONT ]*/
 
 @font-face {
   font-family: Poppins-Regular;
-  src: url('../fonts/poppins/Poppins-Regular.ttf'); 
+  src: url('../fonts/poppins/Poppins-Regular.ttf');
 }
 
 @font-face {
   font-family: Poppins-Medium;
-  src: url('../fonts/poppins/Poppins-Medium.ttf'); 
+  src: url('../fonts/poppins/Poppins-Medium.ttf');
 }
 
 @font-face {
   font-family: Poppins-Bold;
-  src: url('../fonts/poppins/Poppins-Bold.ttf'); 
+  src: url('../fonts/poppins/Poppins-Bold.ttf');
 }
 
 @font-face {
   font-family: Poppins-SemiBold;
-  src: url('../fonts/poppins/Poppins-SemiBold.ttf'); 
+  src: url('../fonts/poppins/Poppins-SemiBold.ttf');
 }
 
 @font-face {
   font-family: Montserrat-Bold;
-  src: url('../fonts/montserrat/Montserrat-Bold.ttf'); 
+  src: url('../fonts/montserrat/Montserrat-Bold.ttf');
 }
 
 @font-face {
   font-family: Montserrat-SemiBold;
-  src: url('../fonts/montserrat/Montserrat-SemiBold.ttf'); 
+  src: url('../fonts/montserrat/Montserrat-SemiBold.ttf');
 }
 
 @font-face {
   font-family: Montserrat-Regular;
-  src: url('../fonts/montserrat/Montserrat-Regular.ttf'); 
+  src: url('../fonts/montserrat/Montserrat-Regular.ttf');
 }
 
 
@@ -45,61 +41,68 @@
 [ RESTYLE TAG ]*/
 
 * {
-	margin: 0px; 
-	padding: 0px; 
-	box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
 }
 
-body, html {
-	height: 100%;
-	font-family: Poppins-Regular, sans-serif;
+body,
+html {
+  height: 100%;
+  font-family: Poppins-Regular, sans-serif;
 }
 
 /*---------------------------------------------*/
 a {
-	font-family: Poppins-Regular;
-	font-size: 14px;
-	line-height: 1.7;
-	color: #666666;
-	margin: 0px;
-	transition: all 0.4s;
-	-webkit-transition: all 0.4s;
+  font-family: Poppins-Regular;
+  font-size: 14px;
+  line-height: 1.7;
+  color: #666666;
+  margin: 0px;
+  transition: all 0.4s;
+  -webkit-transition: all 0.4s;
   -o-transition: all 0.4s;
   -moz-transition: all 0.4s;
 }
 
 a:focus {
-	outline: none !important;
+  outline: none !important;
 }
 
 a:hover {
-	text-decoration: none;
+  text-decoration: none;
   color: #0547ffcf;
 }
 
 /*---------------------------------------------*/
-h1,h2,h3,h4,h5,h6 {
-	margin: 0px;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0px;
 }
 
 p {
-	font-family: Poppins-Regular;
-	font-size: 14px;
-	line-height: 1.7;
-	color: #666666;
-	margin: 0px;
+  font-family: Poppins-Regular;
+  font-size: 14px;
+  line-height: 1.7;
+  color: #666666;
+  margin: 0px;
 }
 
-ul, li {
-	margin: 0px;
-	list-style-type: none;
+ul,
+li {
+  margin: 0px;
+  list-style-type: none;
 }
 
 
 /*---------------------------------------------*/
 input {
-	outline: none;
-	border: none;
+  outline: none;
+  border: none;
 }
 
 textarea {
@@ -107,29 +110,74 @@ textarea {
   border: none;
 }
 
-textarea:focus, input:focus {
+textarea:focus,
+input:focus {
   border-color: transparent !important;
 }
 
-input:focus::-webkit-input-placeholder { color:transparent; }
-input:focus:-moz-placeholder { color:transparent; }
-input:focus::-moz-placeholder { color:transparent; }
-input:focus:-ms-input-placeholder { color:transparent; }
+input:focus::-webkit-input-placeholder {
+  color: transparent;
+}
 
-textarea:focus::-webkit-input-placeholder { color:transparent; }
-textarea:focus:-moz-placeholder { color:transparent; }
-textarea:focus::-moz-placeholder { color:transparent; }
-textarea:focus:-ms-input-placeholder { color:transparent; }
+input:focus:-moz-placeholder {
+  color: transparent;
+}
 
-input::-webkit-input-placeholder { color: #999999;}
-input:-moz-placeholder { color: #999999;}
-input::-moz-placeholder { color: #999999;}
-input:-ms-input-placeholder { color: #999999;}
+input:focus::-moz-placeholder {
+  color: transparent;
+}
 
-textarea::-webkit-input-placeholder { color: #999999;}
-textarea:-moz-placeholder { color: #999999;}
-textarea::-moz-placeholder { color: #999999;}
-textarea:-ms-input-placeholder { color: #999999;}
+input:focus:-ms-input-placeholder {
+  color: transparent;
+}
+
+textarea:focus::-webkit-input-placeholder {
+  color: transparent;
+}
+
+textarea:focus:-moz-placeholder {
+  color: transparent;
+}
+
+textarea:focus::-moz-placeholder {
+  color: transparent;
+}
+
+textarea:focus:-ms-input-placeholder {
+  color: transparent;
+}
+
+input::-webkit-input-placeholder {
+  color: #999999;
+}
+
+input:-moz-placeholder {
+  color: #999999;
+}
+
+input::-moz-placeholder {
+  color: #999999;
+}
+
+input:-ms-input-placeholder {
+  color: #999999;
+}
+
+textarea::-webkit-input-placeholder {
+  color: #999999;
+}
+
+textarea:-moz-placeholder {
+  color: #999999;
+}
+
+textarea::-moz-placeholder {
+  color: #999999;
+}
+
+textarea:-ms-input-placeholder {
+  color: #999999;
+}
 
 
 label {
@@ -139,17 +187,17 @@ label {
 
 /*---------------------------------------------*/
 button {
-	outline: none !important;
-	border: none;
-	background: transparent;
+  outline: none !important;
+  border: none;
+  background: transparent;
 }
 
 button:hover {
-	cursor: pointer;
+  cursor: pointer;
 }
 
 iframe {
-	border: none !important;
+  border: none !important;
 }
 
 /*//////////////////////////////////////////////////////////////////
@@ -185,9 +233,17 @@ iframe {
 
 /*==================================================================
 [ Background ]*/
-.bg1 {background: #3b5998;}
-.bg2 {background: #1da1f2;}
-.bg3 {background: #cd201f;}
+.bg1 {
+  background: #3b5998;
+}
+
+.bg2 {
+  background: #1da1f2;
+}
+
+.bg3 {
+  background: #cd201f;
+}
 
 
 /*//////////////////////////////////////////////////////////////////
@@ -198,7 +254,7 @@ iframe {
 }
 
 .container-login100 {
-  width: 100%;  
+  width: 100%;
   min-height: 100vh;
   display: -webkit-box;
   display: -webkit-flex;
@@ -238,16 +294,22 @@ iframe {
   z-index: 1;
 }
 
-.login100-more::before {
-  content: "";
-  display: block;
-  position: absolute;
-  z-index: -1;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  background: rgba(0,0,0,0.1);
+/* Removed the black overlay to preserve original image colors */
+
+/* Ensure image displays with original colors */
+.login100-more {
+  filter: none !important;
+  -webkit-filter: none !important;
+  opacity: 1 !important;
+  background-color: transparent !important;
+}
+
+/* Remove any potential overlays */
+.login100-more::before,
+.login100-more::after {
+  display: none !important;
+  background: none !important;
+  content: none !important;
 }
 
 
@@ -259,7 +321,7 @@ iframe {
   width: 560px;
   min-height: 100vh;
   display: block;
-  background-image:url("../../../img/b.svg");
+  background-image: url("../../../img/b.svg");
   padding: 50px 55px 55px 55px;
 }
 
@@ -361,7 +423,7 @@ input.input100 {
   transform: scaleX(1.1) scaleY(1.3);
 }
 
-.input100:focus + .focus-input100 {
+.input100:focus+.focus-input100 {
   visibility: visible;
   opacity: 1;
 
@@ -387,14 +449,16 @@ input.input100 {
   height: 48px;
 }
 
-.label-input100{
+.label-input100 {
   top: 14px;
   font-size: 13px;
 }
-.input100{
-  top:20px;
+
+.input100 {
+  top: 20px;
 }
-.input100:focus + .focus-input100 + .label-input100 {
+
+.input100:focus+.focus-input100+.label-input100 {
   top: 14px;
   font-size: 13px;
 }
@@ -403,7 +467,7 @@ input.input100 {
   height: 48px !important;
 }
 
-.error-validation{
+.error-validation {
   border-color: red;
   color: red;
 }
@@ -456,7 +520,7 @@ input.input100 {
   transform: translateY(-50%);
 }
 
-.input-checkbox100:checked + .label-checkbox100::before {
+.input-checkbox100:checked+.label-checkbox100::before {
   color: #0547ffcf;
 }
 
@@ -634,9 +698,9 @@ input.input100 {
   border-radius: 50%;
   display: inline-block;
   background-color: #0547ffcf;
-  padding:15px 10px 15px 10px;
-  border-radius:100px;
-  color:#fff;
+  padding: 15px 10px 15px 10px;
+  border-radius: 100px;
+  color: #fff;
 }
 
 .callout {
@@ -677,16 +741,16 @@ input.input100 {
   border-left-color: #1e7e34;
 }
 
-.dropdown-menu{
-    min-width: unset;
-    max-height: 300px;
-    overflow: auto;
+.dropdown-menu {
+  min-width: unset;
+  max-height: 300px;
+  overflow: auto;
 }
 
-.dropdown-menu a{
-  color:black!important;
+.dropdown-menu a {
+  color: black !important;
 }
 
-a{
-  color:#bc032f!important;
+a {
+  color: #bc032f !important;
 }

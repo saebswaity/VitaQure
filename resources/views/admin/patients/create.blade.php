@@ -35,6 +35,9 @@
     <!-- /.card-header -->
     <div class="card-body">
       @csrf
+      @if(request('return_url'))
+      <input type="hidden" name="return_url" value="{{ request('return_url') }}">
+      @endif
       @include('admin.patients._form')
     </div>
     <!-- /.card-body -->

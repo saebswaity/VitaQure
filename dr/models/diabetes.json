@@ -1,0 +1,28 @@
+{
+  "inputs": {
+    "Glucose": {"label": "Glucose", "type": "number"},
+    "Cholesterol": {"label": "Cholesterol", "type": "number"},
+    "Hemoglobin": {"label": "Hemoglobin", "type": "number"},
+    "Platelets": {"label": "Platelets", "type": "number"},
+    "White Blood Cells": {"label": "White Blood Cells", "type": "number"},
+    "Red Blood Cells": {"label": "Red Blood Cells", "type": "number"},
+    "Hematocrit": {"label": "Hematocrit", "type": "number"},
+    "Mean Corpuscular Volume": {"label": "Mean Corpuscular Volume", "type": "number"},
+    "Mean Corpuscular Hemoglobin": {"label": "Mean Corpuscular Hemoglobin", "type": "number"},
+    "Mean Corpuscular Hemoglobin Concentration": {"label": "Mean Corpuscular Hemoglobin Concentration", "type": "number"},
+    "Insulin": {"label": "Insulin", "type": "number"},
+    "BMI": {"label": "BMI", "type": "number"},
+    "Systolic Blood Pressure": {"label": "Systolic Blood Pressure", "type": "number"},
+    "Diastolic Blood Pressure": {"label": "Diastolic Blood Pressure", "type": "number"},
+    "Triglycerides": {"label": "Triglycerides", "type": "number"},
+    "HbA1c": {"label": "HbA1c", "type": "number"},
+    "LDL Cholesterol": {"label": "LDL Cholesterol", "type": "number"},
+    "HDL Cholesterol": {"label": "HDL Cholesterol", "type": "number"},
+    "ALT": {"label": "ALT", "type": "number"},
+    "AST": {"label": "AST", "type": "number"},
+    "Heart Rate": {"label": "Heart Rate", "type": "number"},
+    "Creatinine": {"label": "Creatinine", "type": "number"},
+    "Troponin": {"label": "Troponin", "type": "number"},
+    "C-reactive Protein": {"label": "C-reactive Protein", "type": "number"}
+  }
+}

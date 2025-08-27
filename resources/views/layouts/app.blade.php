@@ -6,10 +6,6 @@
 </head>
 
 <body class="hold-transition sidebar-mini layout-fixed text-sm">
-  <div class="preloader">
-  </div>
-  <div class="loader"></div>
-
   <div class="wrapper">
 
     <!-- Navbar -->

@@ -174,21 +174,47 @@ if (!function_exists('generate_pdf'))
 
     function generate_pdf($data='',$type=1)
     {
-        //reports settings
+        //reports settings with safe defaults
         $reports_settings=setting('reports');
+        if(!$reports_settings||!is_array($reports_settings)){
+            $defaultFont='Arial';
+            $defaultSize='14px';
+            $defaultColor='#000000';
+            $reports_settings=[
+                'test_title'=>['color'=>$defaultColor,'font-size'=>'18px','font-family'=>$defaultFont],
+                'test_name'=>['color'=>$defaultColor,'font-size'=>$defaultSize,'font-family'=>$defaultFont],
+                'test_head'=>['color'=>$defaultColor,'font-size'=>$defaultSize,'font-family'=>$defaultFont],
+                'unit'=>['color'=>$defaultColor,'font-size'=>$defaultSize,'font-family'=>$defaultFont],
+                'reference_range'=>['color'=>$defaultColor,'font-size'=>$defaultSize,'font-family'=>$defaultFont],
+                'result'=>['color'=>$defaultColor,'font-size'=>$defaultSize,'font-family'=>$defaultFont],
+                'status'=>['color'=>$defaultColor,'font-size'=>$defaultSize,'font-family'=>$defaultFont],
+                'comment'=>['color'=>$defaultColor,'font-size'=>$defaultSize,'font-family'=>$defaultFont],
+                'antibiotic_name'=>['color'=>$defaultColor,'font-size'=>$defaultSize,'font-family'=>$defaultFont],
+                'sensitivity'=>['color'=>$defaultColor,'font-size'=>$defaultSize,'font-family'=>$defaultFont],
+                'commercial_name'=>['color'=>$defaultColor,'font-size'=>$defaultSize,'font-family'=>$defaultFont],
+            ];
+        }
 
         //info setting
         $info_settings=setting('info');
 
         $pdf_name=time().'.pdf';
 
-        //get header , body , footer
-        $report_header = base64_encode(file_get_contents('img/report_header.jpg'));
-        $report_background = base64_encode(file_get_contents('img/report_background.png'));
-        $report_footer = base64_encode(file_get_contents('img/report_footer.jpg'));
-        $report_header = 'data:'.mime_content_type('img/report_header.jpg').';base64,'.$report_header;
-        $report_background = 'data:'.mime_content_type('img/report_background.png').';base64,'.$report_background;
-        $report_footer = 'data:'.mime_content_type('img/report_footer.jpg').';base64,'.$report_footer;
+        //get header , body , footer from public/img and guard if missing
+        $headerPath=public_path('img/report_header.jpg');
+        $backgroundPath=public_path('img/report_background.png');
+        $footerPath=public_path('img/report_footer.jpg');
+
+        $report_header=null; $report_background=null; $report_footer=null;
+        if(is_file($headerPath)){
+            $report_header='data:'.mime_content_type($headerPath).';base64,'.base64_encode(file_get_contents($headerPath));
+        }
+        if(is_file($backgroundPath)){
+            $report_background='data:'.mime_content_type($backgroundPath).';base64,'.base64_encode(file_get_contents($backgroundPath));
+        }
+        if(is_file($footerPath)){
+            $report_footer='data:'.mime_content_type($footerPath).';base64,'.base64_encode(file_get_contents($footerPath));
+        }
 
         if($type==1)
         {
@@ -208,7 +234,11 @@ if (!function_exists('generate_pdf'))
             $pdf = PDF::loadView('pdf.doctor_report',compact('data','reports_settings','info_settings','type'));
         }
 
-        $pdf->save('uploads/pdf/'.$pdf_name);//save pdf file
+        //ensure directory exists under public/uploads/pdf
+        $pdfDir=public_path('uploads/pdf');
+        if(!is_dir($pdfDir)){@mkdir($pdfDir,0775,true);}        
+
+        $pdf->save($pdfDir.DIRECTORY_SEPARATOR.$pdf_name);//save pdf file
 
         return url('uploads/pdf/'.$pdf_name);//return pdf url
     }

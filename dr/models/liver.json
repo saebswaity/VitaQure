@@ -1,0 +1,14 @@
+{
+  "inputs": {
+    "age": {"label": "Age", "type": "number", "required": true},
+    "gender": {"label": "Gender", "type": "select", "options": ["1", "0"], "required": true},
+    "total_bilirubin": {"label": "Total Bilirubin", "type": "number"},
+    "direct_bilirubin": {"label": "Direct Bilirubin", "type": "number"},
+    "alkphos": {"label": "Alkaline Phosphotase", "type": "number"},
+    "sgpt": {"label": "SGPT (ALT)", "type": "number"},
+    "sgot": {"label": "SGOT (AST)", "type": "number"},
+    "total_proteins": {"label": "Total Proteins", "type": "number"},
+    "albumin": {"label": "Albumin", "type": "number"},
+    "ag_ratio": {"label": "Albumin/Globulin Ratio", "type": "number"}
+  }
+}

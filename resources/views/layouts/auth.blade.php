@@ -58,7 +58,7 @@
 	<div class="limiter">
 		<div class="container-login100">
 			<div class="wrap-login100">
-				<div class="login100-more" style="background-image: url('{{url("assets/images/bg-01.png")}}');">
+				<div class="login100-more" style="background-image: url('{{url("assets/images/Group 33.png")}}?v={{time()}}');">
 				</div>
 
 				<div class="login100-form">
