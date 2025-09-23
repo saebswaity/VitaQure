@@ -177,13 +177,28 @@
     </div>
 
     <div class="card qc-card mt-3">
-      <div class="card-header">
+      <div class="card-header d-flex align-items-center justify-content-between">
         <h3 class="qc-title mb-0">{{ __('Reference Values Forms') }}</h3>
+        @if(!\Gate::allows('edit_qc_reference'))
+        <span class="badge badge-secondary"><i class="fas fa-lock mr-1"></i>{{ __('Locked (read-only)') }}</span>
+        @endif
       </div>
+      @if(!\Gate::allows('edit_qc_reference'))
+      <div class="px-3 pt-2">
+        <div class="alert alert-secondary mb-0" role="alert" style="border-radius:8px;">
+          <i class="fas fa-info-circle mr-1"></i>
+          {{ __('You have view-only access. To request editing rights for Reference Values, please contact your administrator.') }}
+        </div>
+      </div>
+      @endif
       <div class="card-body" id="forms"></div>
       <div class="card-footer">
+        @if(\Gate::allows('edit_qc_reference'))
         <button class="btn btn-primary btn-pill" id="btn-save">{{ __('Save Reference Values') }}</button>
         <button class="btn btn-secondary btn-pill ml-2" id="btn-reset">{{ __('Reset') }}</button>
+        @else
+        <span class="text-muted">{{ __('You have view-only access to Reference Values') }}</span>
+        @endif
       </div>
     </div>
   </div>
@@ -197,6 +212,7 @@
   var analyteName = '{{ $analyte->name }}';
   var analyteDecimals = {{ $analyte->decimals ?? 2 }};
   var analytes = [];
+  var canEditReference = @json(\Gate::allows('edit_qc_reference'));
   var materials = [];
   var assigned = [];
   var assignedIds = [];
@@ -232,6 +248,10 @@
         +'<div class="form-group col-md-2"><label>-2SD</label><input type="number" class="form-control" data-calc="minus_2sd" data-k="minus_2sd"></div>'
         +'<div class="form-group col-md-2"><label>-3SD</label><input type="number" class="form-control" data-calc="minus_3sd" data-k="minus_3sd"></div>'
       +'</div>';
+    if(!canEditReference){
+      var inputs = wrap.querySelectorAll('input');
+      inputs.forEach(function(inp){ inp.disabled = true; inp.readOnly = true; });
+    }
     return wrap;
   }
 
@@ -389,6 +409,8 @@
         renderList(); 
         renderAssign();
         loadControls();
+        // Auto-load reference values for currently assigned controls on initial page load
+        loadValues();
       } else {
         console.error('Failed to load assignments:', res);
         assigned = [];
@@ -415,7 +437,8 @@
   };
 
   document.getElementById('btn-load').onclick=loadValues;
-  document.getElementById('btn-save').onclick=function(){
+  var saveBtn = document.getElementById('btn-save');
+  if(saveBtn){ saveBtn.onclick=function(){
     var aid = analyteId;
     var forms = Array.from(document.querySelectorAll('#forms > div[data-cid]'));
     var items = forms.map(function(div){
@@ -438,8 +461,9 @@
     }
     if(!confirm('Save reference values?')) return;
     fetch(@json(route('admin.qc.reference.save')),{ method:'POST', headers:{'Content-Type':'application/json','Accept':'application/json','X-CSRF-TOKEN':@json(csrf_token())}, body:JSON.stringify({ analyte_id: aid, items: items })}).then(function(r){ if(!r.ok) return r.text().then(t=>Promise.reject(t)); return r.json(); }).then(function(){ alert('Saved'); }).catch(function(e){ alert('Save failed: '+e); });
-  };
-  document.getElementById('btn-reset').onclick=function(){ document.querySelectorAll('#forms input[data-k]').forEach(function(inp){ inp.value=''; }); };
+  }; }
+  var resetBtn = document.getElementById('btn-reset');
+  if(resetBtn){ resetBtn.onclick=function(){ document.querySelectorAll('#forms input[data-k]').forEach(function(inp){ inp.value=''; }); }; }
 
   document.getElementById('select-all-controls').addEventListener('change', function(){
     var all = Array.from(document.querySelectorAll('#controls-list input[type="checkbox"]'));

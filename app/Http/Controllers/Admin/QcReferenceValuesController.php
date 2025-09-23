@@ -107,6 +107,14 @@ class QcReferenceValuesController extends Controller
                 $minus1 = array_key_exists('minus_1sd',$item) && $item['minus_1sd'] !== null ? (float)$item['minus_1sd'] : $mean - $sd;
                 $minus2 = array_key_exists('minus_2sd',$item) && $item['minus_2sd'] !== null ? (float)$item['minus_2sd'] : $mean - 2*$sd;
                 $minus3 = array_key_exists('minus_3sd',$item) && $item['minus_3sd'] !== null ? (float)$item['minus_3sd'] : $mean - 3*$sd;
+                // determine if create or update to enforce permission
+                $exists = QcReferenceValue::where('analyte_id',$payload['analyte_id'])->where('control_id',$item['control_id'])->exists();
+                if($exists){
+                    if(!\Gate::allows('edit_qc_reference')){ abort(403); }
+                } else {
+                    if(!\Gate::allows('edit_qc_reference')){ abort(403); }
+                }
+
                 QcReferenceValue::updateOrCreate(
                     ['analyte_id'=>$payload['analyte_id'], 'control_id'=>$item['control_id']],
                     [

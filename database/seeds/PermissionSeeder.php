@@ -46,6 +46,21 @@ class PermissionSeeder extends Seeder
         ]
         );
 
+        // QC module (Reference Values editing)
+        $qc_module=Module::Create([
+            'name'=>'QC'
+        ]);
+
+        Permission::insert(
+        [
+            [
+                'module_id'=>$qc_module['id'],
+                'key'=>'edit_qc_reference',
+                'name'=>'Edit QC Reference Values'
+            ],
+        ]
+        );
+
         //cultures
         $cultures_module=Module::Create([
             'name'=>'cultures'
