@@ -1,0 +1,33 @@
+# Core dependencies and tooling
+vendor/
+node_modules/
+
+# Laravel typical directories
+bootstrap/cache/
+storage/*
+!storage/.gitignore
+!storage/framework/
+storage/framework/*
+!storage/framework/.gitignore
+public/storage
+
+# Environment and local config
+.env
+.env.*
+
+# IDE/editor
+.idea/
+.vscode/
+
+# OS / misc
+.DS_Store
+Thumbs.db
+
+# PHPUnit cache
+.phpunit.result.cache
+
+# Project-specific: ignore uploaded PDFs and temp files
+public/uploads/**/*.pdf
+public/uploads/tmp/
+public/uploads/**/*.tmp
+
