@@ -1,0 +1,21 @@
+{
+  "model": "heart",
+  "inputs": {
+    "male": "Male",
+    "age": "45",
+    "currentSmoker": "No",
+    "cigsPerDay": "0",
+    "BPMeds": "No",
+    "prevalentStroke": "No",
+    "prevalentHyp": "No",
+    "diabetes": "No",
+    "totChol": "200",
+    "sysBP": "120",
+    "diaBP": "80",
+    "BMI": "25",
+    "heartRate": "70",
+    "glucose": "90"
+  },
+  "csv_path": "/var/www/clindalab7/dr/csv/heart_data_with_balance.csv",
+  "model_path": "/var/www/clindalab7/dr/heart.pkl"
+}

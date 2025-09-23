@@ -1,14 +1,14 @@
 {
   "inputs": {
-    "age": {"label": "Age", "type": "number", "required": true},
-    "gender": {"label": "Gender", "type": "select", "options": ["1", "0"], "required": true},
-    "total_bilirubin": {"label": "Total Bilirubin", "type": "number"},
-    "direct_bilirubin": {"label": "Direct Bilirubin", "type": "number"},
-    "alkphos": {"label": "Alkaline Phosphotase", "type": "number"},
-    "sgpt": {"label": "SGPT (ALT)", "type": "number"},
-    "sgot": {"label": "SGOT (AST)", "type": "number"},
-    "total_proteins": {"label": "Total Proteins", "type": "number"},
-    "albumin": {"label": "Albumin", "type": "number"},
-    "ag_ratio": {"label": "Albumin/Globulin Ratio", "type": "number"}
+    "Age of the patient": {"label": "Age", "type": "number", "required": true},
+    "Gender of the patient": {"label": "Gender", "type": "select", "options": ["Male", "Female"], "required": true},
+    "Total Bilirubin": {"label": "Total Bilirubin", "type": "number"},
+    "Direct Bilirubin": {"label": "Direct Bilirubin", "type": "number"},
+    "Alkphos Alkaline Phosphotase": {"label": "Alkaline Phosphotase", "type": "number"},
+    "Sgpt Alamine Aminotransferase": {"label": "SGPT (ALT)", "type": "number"},
+    "Sgot Aspartate Aminotransferase": {"label": "SGOT (AST)", "type": "number"},
+    "Total Protiens": {"label": "Total Proteins", "type": "number"},
+    "ALB Albumin": {"label": "Albumin", "type": "number"},
+    "A/G Ratio Albumin and Globulin Ratio": {"label": "Albumin/Globulin Ratio", "type": "number"}
   }
 }

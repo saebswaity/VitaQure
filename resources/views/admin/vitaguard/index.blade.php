@@ -293,16 +293,10 @@
                   </div>
                 @endforeach
                 <div class="text-center mt-3">
-                  @if($selectedModelKey === 'kidney')
-                    <button type="button" id="vg-predict-btn" class="btn vg-analyze-btn">{{ __('Analyze') }}</button>
-                  @else
-                    <button type="button" class="btn vg-analyze-btn" disabled title="{{ __('This model is not yet active') }}">{{ __('Analyze') }}</button>
-                  @endif
+                  <button type="button" id="vg-predict-btn" class="btn vg-analyze-btn">{{ __('Analyze') }}</button>
                 </div>
               </form>
-              @if($selectedModelKey === 'kidney')
-                <div id="vg-predict-result" class="mt-3" style="display:none"></div>
-              @endif
+              <div id="vg-predict-result" class="mt-3" style="display:none"></div>
             @else
               <p class="text-muted mb-0"><small>{{ __('No inputs described in config.') }}</small></p>
             @endif
@@ -355,7 +349,7 @@
     }
 
     btn.onclick = function(){
-      var payload = { model: 'kidney', inputs: collectInputs() };
+      var payload = { model: @json($selectedModelKey), inputs: collectInputs() };
       // Reset result box completely to avoid any Bootstrap alert remnants
       box.style.display = 'none';
       box.removeAttribute('class');

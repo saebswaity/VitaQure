@@ -1,0 +1,17 @@
+{
+  "model": "liver",
+  "inputs": {
+    "Age of the patient": "45",
+    "Gender of the patient": "Male",
+    "Total Bilirubin": "1.2",
+    "Direct Bilirubin": "0.3",
+    "Alkphos Alkaline Phosphotase": "85",
+    "Sgpt Alamine Aminotransferase": "25",
+    "Sgot Aspartate Aminotransferase": "30",
+    "Total Protiens": "7.5",
+    "ALB Albumin": "4.2",
+    "A/G Ratio Albumin and Globulin Ratio": "1.2"
+  },
+  "csv_path": "/var/www/clindalab7/dr/csv/livergood_final cleaning.csv",
+  "model_path": "/var/www/clindalab7/dr/liver.pkl"
+}

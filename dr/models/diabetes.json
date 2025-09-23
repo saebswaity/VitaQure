@@ -11,7 +11,7 @@
     "Mean Corpuscular Hemoglobin": {"label": "Mean Corpuscular Hemoglobin", "type": "number"},
     "Mean Corpuscular Hemoglobin Concentration": {"label": "Mean Corpuscular Hemoglobin Concentration", "type": "number"},
     "Insulin": {"label": "Insulin", "type": "number"},
-    "BMI": {"label": "BMI", "type": "number"},
+    "BMI": {"label": "BMI", "type": "number", "required": true},
     "Systolic Blood Pressure": {"label": "Systolic Blood Pressure", "type": "number"},
     "Diastolic Blood Pressure": {"label": "Diastolic Blood Pressure", "type": "number"},
     "Triglycerides": {"label": "Triglycerides", "type": "number"},

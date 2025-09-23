@@ -8,9 +8,11 @@ use App\Models\QcAnalyte;
 use App\Models\QcControlMaterial;
 use App\Models\QcReferenceValue;
 use Illuminate\Support\Facades\Schema;
+use Gate;
 
 class QcReferenceValuesController extends Controller
 {
+    
     private function ensureTables(): void
     {
         if (!Schema::hasTable('qc_reference_values')) {
@@ -33,7 +35,8 @@ class QcReferenceValuesController extends Controller
     }
     public function index()
     {
-        return view('admin.qc.reference');
+        // Redirect to the new combined page
+        return redirect()->route('admin.qc.materials.combined');
     }
 
     public function options()

@@ -38,7 +38,8 @@ class QcControlMaterialsController extends Controller
 
     public function index()
     {
-        return view('admin.qc.materials');
+        // Redirect to the new combined page
+        return redirect()->route('admin.qc.materials.combined');
     }
 
     public function list(Request $request)
@@ -169,6 +170,24 @@ class QcControlMaterialsController extends Controller
         } catch (\Throwable $e) {
             return response()->json(['ok'=>false, 'error'=>$e->getMessage()], 500);
         }
+    }
+
+    /**
+     * Combined page for Assign Control Materials & Reference Values
+     * This replaces the separate materials and reference pages
+     */
+    public function combined(Request $request)
+    {
+        $analyteId = $request->query('analyte_id');
+        
+        if (!$analyteId) {
+            return redirect()->route('admin.qc.analytes.index')
+                ->with('error', 'Please select an analyte first.');
+        }
+
+        $analyte = \App\Models\QcAnalyte::findOrFail($analyteId);
+        
+        return view('admin.qc.combined', compact('analyte'));
     }
 }
 

@@ -60,7 +60,7 @@
     </div>
   </div>
   <div class="d-flex align-items-center justify-content-between mt-4">
-    <button type="button" class="btn btn-back btn-sm btn-pill" onclick="if(history.length>1){history.back();}else{window.location.href='{{ route('admin.home') }}';}">
+    <button type="button" class="btn btn-back btn-sm btn-pill" onclick="window.location.href='{{ route('admin.home') }}'">
       <i class="fas fa-arrow-left"></i> {{ __('Back') }}
     </button>
   </div>
@@ -140,7 +140,7 @@
                 <th>{{ __('Levels') }}</th>
                 <th>{{ __('Unit') }}</th>
                 <th>{{ __('Decimals') }}</th>
-                <th style="width:60px;">{{ __('Action') }}</th>
+                <th style="width:120px;">{{ __('Action') }}</th>
               </tr>
             </thead>
             <tbody></tbody>
@@ -187,17 +187,18 @@
                    '<td>'+(typeof r.levels_count!=='undefined' ? (r.levels_count+'') : (r.levels||''))+'</td>'+
                    '<td>'+esc(r.unit)+'</td>'+
                    '<td>'+Number(r.decimals)+'</td>'+
-                   '<td><i class="fas fa-trash qc-action" title="Delete"></i></td>';
+                   '<td><i class="fas fa-edit qc-action mr-2" title="Edit" style="color:#3b82f6;"></i><i class="fas fa-trash qc-action" title="Delete"></i></td>';
       tr.onclick=function(e){
-        if(e.target && e.target.classList.contains('fa-trash')) return;
-        // Navigate to Step 1 (materials assignment) for this analyte
-        window.location.href = @json(url('admin/qc/materials')) + '?analyte_id=' + encodeURIComponent(r.id);
+        if(e.target && (e.target.classList.contains('fa-trash') || e.target.classList.contains('fa-edit'))) return;
+        // Navigate to Daily QC Entry page for this analyte
+        window.location.href = @json(url('admin/qc/entries')) + '?analyte_id=' + encodeURIComponent(r.id);
       };
+      tr.querySelector('.fa-edit').onclick=function(e){ e.stopPropagation(); window.location.href = @json(url('admin/qc/materials-combined')) + '?analyte_id=' + encodeURIComponent(r.id); };
       tr.querySelector('.fa-trash').onclick=function(e){ e.stopPropagation(); if(confirm('Delete this analyte?')) destroy(r.id); };
       if(selectedId===r.id) tr.classList.add('active');
       tbody.appendChild(tr);
     });
-    document.getElementById('btn-replace').disabled = !selectedId;
+    // Note: btn-replace button was removed, so this line is no longer needed
   }
 
   function select(id){ selectedId=id; var r=rows.find(function(x){return x.id===id}); if(!r) return; document.getElementById('name').value=r.name; document.getElementById('unit').value=r.unit; document.getElementById('decimals').value=r.decimals; render(); }
@@ -276,4 +277,3 @@
 })();
 </script>
 @endsection
-

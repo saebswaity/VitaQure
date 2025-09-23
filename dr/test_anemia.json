@@ -1,0 +1,21 @@
+{
+  "model": "blood_disorders",
+  "inputs": {
+    "WBC": "7.5",
+    "LYMp": "35",
+    "NEUTp": "55",
+    "LYMn": "2.6",
+    "NEUTn": "4.1",
+    "RBC": "4.5",
+    "HGB": "14.0",
+    "HCT": "42",
+    "MCV": "93",
+    "MCH": "31",
+    "MCHC": "33",
+    "PLT": "250",
+    "PDW": "12",
+    "PCT": "0.3"
+  },
+  "csv_path": "/var/www/clindalab7/dr/csv/cleaned_anemia_data.csv",
+  "model_path": "/var/www/clindalab7/dr/anemia.pkl"
+}

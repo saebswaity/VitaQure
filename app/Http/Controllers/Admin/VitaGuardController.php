@@ -50,15 +50,44 @@ class VitaGuardController extends Controller
     public function predict(Request $request)
     {
         $data = $request->validate([
-            'model' => 'required|string|in:kidney',
+            'model' => 'required|string|in:kidney,heart,liver,blood_disorders,diabetes',
             'inputs' => 'required|array',
         ]);
+
+        // Define model configurations
+        $modelConfigs = [
+            'kidney' => [
+                'csv_path' => base_path('dr/csv/kidney_processed.csv'),
+                'model_path' => base_path('dr/KIDNEY.pkl'),
+            ],
+            'heart' => [
+                'csv_path' => base_path('dr/csv/heart_data_with_balance.csv'),
+                'model_path' => base_path('dr/heart.pkl'),
+            ],
+            'liver' => [
+                'csv_path' => base_path('dr/csv/livergood_final cleaning.csv'),
+                'model_path' => base_path('dr/liver.pkl'),
+            ],
+            'blood_disorders' => [
+                'csv_path' => base_path('dr/csv/cleaned_anemia_data.csv'),
+                'model_path' => base_path('dr/anemia.pkl'),
+            ],
+            'diabetes' => [
+                'csv_path' => base_path('dr/csv/filtered_original_data.csv'),
+                'model_path' => base_path('dr/diabetes.pkl'),
+            ],
+        ];
+
+        $selectedModel = $data['model'];
+        if (!isset($modelConfigs[$selectedModel])) {
+            return response()->json(['ok' => false, 'error' => 'Invalid model selected'], 400);
+        }
 
         $payload = [
             'model' => $data['model'],
             'inputs' => $data['inputs'],
-            'csv_path' => base_path('dr/csv/kidney_processed.csv'),
-            'model_path' => base_path('dr/KIDNEY.pkl'),
+            'csv_path' => $modelConfigs[$selectedModel]['csv_path'],
+            'model_path' => $modelConfigs[$selectedModel]['model_path'],
         ];
 
         $tmpFile = tempnam(sys_get_temp_dir(), 'vg_');

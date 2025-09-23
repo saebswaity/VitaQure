@@ -1,0 +1,31 @@
+{
+  "model": "diabetes",
+  "inputs": {
+    "Glucose": "120",
+    "Cholesterol": "200",
+    "Hemoglobin": "14.0",
+    "Platelets": "250",
+    "White Blood Cells": "7.5",
+    "Red Blood Cells": "4.5",
+    "Hematocrit": "42",
+    "Mean Corpuscular Volume": "93",
+    "Mean Corpuscular Hemoglobin": "31",
+    "Mean Corpuscular Hemoglobin Concentration": "33",
+    "Insulin": "15",
+    "BMI": "25",
+    "Systolic Blood Pressure": "120",
+    "Diastolic Blood Pressure": "80",
+    "Triglycerides": "150",
+    "HbA1c": "5.5",
+    "LDL Cholesterol": "120",
+    "HDL Cholesterol": "50",
+    "ALT": "25",
+    "AST": "30",
+    "Heart Rate": "70",
+    "Creatinine": "1.0",
+    "Troponin": "0.01",
+    "C-reactive Protein": "2.0"
+  },
+  "csv_path": "/var/www/clindalab7/dr/csv/filtered_original_data.csv",
+  "model_path": "/var/www/clindalab7/dr/diabetes.pkl"
+}

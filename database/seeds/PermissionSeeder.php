@@ -346,7 +346,7 @@ class PermissionSeeder extends Seeder
         ]
         );
 
-       
+        
 
         //accounting
         $accounting_module=Module::Create([
@@ -615,7 +615,6 @@ class PermissionSeeder extends Seeder
             ],
         ]
         );
-
 
     }
 }

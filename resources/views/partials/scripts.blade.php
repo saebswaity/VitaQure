@@ -157,15 +157,13 @@
 @endif
 <!-- Flash messages -->
 <script>
-  if(session().has('success')){
-
+  @if(session()->has('success'))
     toastr_success(trans("{{Session::get('success')}}"));
-  }
+  @endif
   
-  if(Session().has('failed') || session().has('errors')){
-
+  @if(Session::has('failed') || session()->has('errors'))
     toastr_error(trans("{{Session::get('failed')}}"));
-  }
+  @endif
   
 </script>
 <!-- AI chat cleanup on logout -->

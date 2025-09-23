@@ -57,6 +57,7 @@ Route::group(['prefix'=>'admin','as'=>'admin.','namespace'=>'Admin','middleware'
 
     //tests and its components
     Route::resource('tests','TestsController');
+    
 
 
     Route::get('get_tests','TestsController@ajax')->name('get_tests');//datatable
@@ -183,7 +184,7 @@ Route::group(['prefix'=>'admin','as'=>'admin.','namespace'=>'Admin','middleware'
     Route::put('qc/analytes/{id}', 'QcAnalytesController@update')->name('qc.analytes.update');
     Route::delete('qc/analytes/{id}', 'QcAnalytesController@destroy')->name('qc.analytes.destroy');
 
-    // QC Step 1: Control Materials Assignment
+    // QC Step 1: Control Materials Assignment (Legacy - kept for backward compatibility)
     Route::get('qc/materials', 'QcControlMaterialsController@index')->name('qc.materials.index');
     Route::get('qc/materials/list', 'QcControlMaterialsController@list')->name('qc.materials.list');
     Route::get('qc/materials/{id}', 'QcControlMaterialsController@show')->name('qc.materials.show');
@@ -193,17 +194,24 @@ Route::group(['prefix'=>'admin','as'=>'admin.','namespace'=>'Admin','middleware'
     Route::get('qc/materials-assigned', 'QcControlMaterialsController@assignedForAnalyte')->name('qc.materials.assigned_for_analyte');
     Route::post('qc/materials-assign', 'QcControlMaterialsController@assignForAnalyte')->name('qc.materials.assign_for_analyte');
 
-    // QC Step 2: Reference Values
+    // QC Step 2: Reference Values (Legacy - kept for backward compatibility)
     Route::get('qc/reference', 'QcReferenceValuesController@index')->name('qc.reference.index');
     Route::get('qc/reference/options', 'QcReferenceValuesController@options')->name('qc.reference.options');
     Route::post('qc/reference/load', 'QcReferenceValuesController@load')->name('qc.reference.load');
     Route::post('qc/reference/save', 'QcReferenceValuesController@save')->name('qc.reference.save');
 
+    // QC Combined: Assign Control Materials & Reference Values (New unified page)
+    Route::get('qc/materials-combined', 'QcControlMaterialsController@combined')->name('qc.materials.combined');
+
     // QC Step 3: Daily Entries
     Route::get('qc/entries', 'QcEntriesController@index')->name('qc.entries.index');
-    Route::get('qc/entries/options', 'QcEntriesController@options')->name('qc.entries.options');
-    Route::get('qc/entries/load', 'QcEntriesController@load')->name('qc.entries.load');
-    Route::post('qc/entries/save', 'QcEntriesController@save')->name('qc.entries.save');
+Route::get('qc/entries/test', 'QcEntriesController@test')->name('qc.entries.test');
+Route::post('qc/entries/test-delete', 'QcEntriesController@testDelete')->name('qc.entries.test-delete');
+Route::get('qc/entries/options', 'QcEntriesController@options')->name('qc.entries.options');
+Route::post('qc/entries/load', 'QcEntriesController@load')->name('qc.entries.load');
+Route::post('qc/entries/save', 'QcEntriesController@save')->name('qc.entries.save');
+Route::post('qc/entries/update', 'QcEntriesController@update')->name('qc.entries.update');
+Route::post('qc/entries/delete', 'QcEntriesController@delete')->name('qc.entries.delete');
 
     //updates
     Route::get('update/{version}','UpdatesController@update');
