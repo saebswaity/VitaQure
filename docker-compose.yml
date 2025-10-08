@@ -1,0 +1,40 @@
+version: '3.8'
+
+services:
+  app:
+    build: .
+    container_name: clindalab-app
+    ports:
+      - "8000:80"
+    volumes:
+      - ./:/app
+    environment:
+      APP_ENV: local
+      APP_DEBUG: 'true'
+      APP_KEY: base64:SomeRandomKeyHere
+      DB_CONNECTION: mysql
+      DB_HOST: db
+      DB_PORT: 3306
+      DB_DATABASE: laravel
+      DB_USERNAME: laravel
+      DB_PASSWORD: secret
+    depends_on:
+      - db
+
+  db:
+    image: mysql:8.0
+    container_name: clindalab-db
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: laravel
+      MYSQL_USER: laravel
+      MYSQL_PASSWORD: secret
+    ports:
+      - "3306:3306"
+    command: --default-authentication-plugin=mysql_native_password
+    volumes:
+      - dbdata:/var/lib/mysql
+
+volumes:
+  dbdata:
